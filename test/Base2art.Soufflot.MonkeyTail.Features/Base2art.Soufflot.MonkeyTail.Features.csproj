@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{209230C8-4F15-4EFC-B090-CA54F7D5CA05}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Base2art.Soufflot.Pack.Features</RootNamespace>
+    <AssemblyName>Base2art.Soufflot.Pack.Features</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Base2art.Bcl">
+      <HintPath>..\..\packages\Base2art.Bcl.1.0.0.0\lib\net\Base2art.Bcl.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.Collections">
+      <HintPath>..\..\packages\Base2art.Collections.1.0.0.1\lib\net\Base2art.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.MonkeyTail.Api">
+      <HintPath>..\..\packages\Base2art.MonkeyTail.Api.1.0.0.0\lib\net\Base2art.MonkeyTail.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.MonkeyTail.Api.Futures">
+      <HintPath>..\..\packages\Base2art.MonkeyTail.Api.1.0.0.0\lib\net\Base2art.MonkeyTail.Api.Futures.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.Serialization">
+      <HintPath>..\..\packages\Base2art.Serialization.1.0.0.1\lib\net\Base2art.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.Validation">
+      <HintPath>..\..\packages\Base2art.Validation.1.0.0.0\lib\net\Base2art.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\..\packages\FluentAssertions.3.2.1\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\..\packages\FluentAssertions.3.2.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoxModelGuidePostFeature.cs" />
+    <Compile Include="ControllerApiFeature.cs" />
+    <Compile Include="FakeRouter.cs" />
+    <Compile Include="FakeRouteData.cs" />
+    <Compile Include="Fixtures\MappedController.cs" />
+    <Compile Include="MappedControllerFeature.cs" />
+    <Compile Include="NotNullFeature.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Base2art.Soufflot.Extensions\Base2art.Soufflot.Extensions.csproj">
+      <Project>{88F7E79A-9E93-459C-8595-AFA703B4EA8B}</Project>
+      <Name>Base2art.Soufflot.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Base2art.Soufflot.Http.Owin\Base2art.Soufflot.Http.Owin.csproj">
+      <Project>{16FE843A-D9F6-4554-B37C-6D255E61D305}</Project>
+      <Name>Base2art.Soufflot.Http.Owin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Base2art.Soufflot.MonkeyTail\Base2art.Soufflot.MonkeyTail.csproj">
+      <Project>{6E81CCD3-F604-4F4F-970F-1BB1243667C5}</Project>
+      <Name>Base2art.Soufflot.MonkeyTail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Base2art.Soufflot\Base2art.Soufflot.csproj">
+      <Project>{D9179312-4A21-45FD-9619-BE212F983E6A}</Project>
+      <Name>Base2art.Soufflot</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

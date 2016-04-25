@@ -1,0 +1,17 @@
+Output
+*.bak
+scrap
+obj
+bin
+*.sou
+*.suo
+*.user
+*.cache
+scripts
+packages
+*.DotSettings
+OpenCover
+ProfilingSessions
+*.snk
+
+scrap

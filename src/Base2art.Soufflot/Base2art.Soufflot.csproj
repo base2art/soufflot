@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D9179312-4A21-45FD-9619-BE212F983E6A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Base2art.Soufflot</RootNamespace>
+    <AssemblyName>Base2art.Soufflot</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\packages\Base2art.Keys.1.0.0\content\base2art.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Base2art.Bcl">
+      <HintPath>..\..\packages\Base2art.Bcl.1.0.0.0\lib\net\Base2art.Bcl.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.Collections">
+      <HintPath>..\..\packages\Base2art.Collections.1.0.0.1\lib\net\Base2art.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.Validation">
+      <HintPath>..\..\packages\Base2art.Validation.1.0.0.0\lib\net\Base2art.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\Application.cs" />
+    <Compile Include="Api\ApplicationMode.cs" />
+    <Compile Include="Api\Config\AggregateConfigurationProvider.cs" />
+    <Compile Include="Api\Config\AppDomainDataConfigurationProvider.cs" />
+    <Compile Include="Api\Config\CommonSettings.cs" />
+    <Compile Include="Api\Config\Properties.cs" />
+    <Compile Include="Api\ControllerExecutionManager.cs" />
+    <Compile Include="Api\Diagnostics\IRequestLoggerFactory.cs" />
+    <Compile Include="Api\Diagnostics\TextWriterLogger.cs" />
+    <Compile Include="Api\Diagnostics\ConsoleLoggerFactory.cs" />
+    <Compile Include="Api\Diagnostics\IApplicationLoggerFactory.cs" />
+    <Compile Include="Api\Diagnostics\ILogMessage.cs" />
+    <Compile Include="Api\Diagnostics\InMemoryLogger.cs" />
+    <Compile Include="Api\Diagnostics\LoggerBase.cs" />
+    <Compile Include="Api\Diagnostics\PredefinedLogLevel.cs" />
+    <Compile Include="Api\Diagnostics\ILogger.cs" />
+    <Compile Include="Api\Diagnostics\LogLevel.cs" />
+    <Compile Include="Api\Diagnostics\LogLevels.cs" />
+    <Compile Include="Api\Diagnostics\NullLogger.cs" />
+    <Compile Include="Api\IApplication.cs" />
+    <Compile Include="Api\Config\IConfigurationProvider.cs" />
+    <Compile Include="Api\IApplicationBuilder.cs" />
+    <Compile Include="Api\IComponentResolver.cs" />
+    <Compile Include="Api\InstantiatingComponentCreator.cs" />
+    <Compile Include="Api\IRouteData.cs" />
+    <Compile Include="Api\IRouter.cs" />
+    <Compile Include="Api\NullRouter.cs" />
+    <Compile Include="Api\PositionedResult.cs" />
+    <Compile Include="Api\ResponseResult.cs" />
+    <Compile Include="Api\Route.cs" />
+    <Compile Include="Api\SimpleContent.cs" />
+    <Compile Include="Api\SimpleResult.cs" />
+    <Compile Include="Api\Config\PropertiesConfigurationProvider.cs" />
+    <Compile Include="Http\CurrentHttpContextProvider.cs" />
+    <Compile Include="Http\HttpMethod.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\ICurrentHttpContextProvider.cs" />
+    <Compile Include="Http\IHttpContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpCookie.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpCookieCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpFilePart.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpFlash.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpMultipartData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpQueryString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpReadOnlyHeaderCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpRequestBody.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpResponseHeaderCollection.cs" />
+    <Compile Include="Http\IHttpSession.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpUser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\IHttpUserLookup.cs" />
+    <Compile Include="Http\Util\ByteArrayReadResult.cs" />
+    <Compile Include="Http\Util\FlashReading.cs" />
+    <Compile Include="Http\Util\IMimeMapping.cs" />
+    <Compile Include="Http\Util\LanguageExtender.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Http\Util\MimeMapping.cs" />
+    <Compile Include="Http\Util\MultiMapReading.cs" />
+    <Compile Include="Http\Util\ReadResultBase.cs" />
+    <Compile Include="Http\Util\StreamExtender.cs" />
+    <Compile Include="Http\Util\StringReadResult.cs" />
+    <Compile Include="Http\Util\UrlEncodingExtender.cs" />
+    <Compile Include="IRoute.cs" />
+    <Compile Include="Mvc\ContentResults.cs" />
+    <Compile Include="Mvc\Controller.cs" />
+    <Compile Include="Mvc\IContent.cs" />
+    <Compile Include="Mvc\INonRenderingController.cs" />
+    <Compile Include="Mvc\IPositionedRenderingController.cs" />
+    <Compile Include="Mvc\IRenderingController.cs" />
+    <Compile Include="Linq\ArrayExtensions.cs" />
+    <Compile Include="Mvc\IResult.cs" />
+    <Compile Include="Mvc\NullNonRenderingController.cs" />
+    <Compile Include="Mvc\NullRenderingController.cs" />
+    <Compile Include="Mvc\Results.cs" />
+    <Compile Include="Mvc\SimpleNonRenderingController.cs" />
+    <Compile Include="Mvc\SimpleRenderingController.cs" />
+    <Compile Include="Net\KeyValuePairCookieJar.cs" />
+    <Compile Include="Net\SecureCookieJarBase.cs" />
+    <Compile Include="Net\SecureCookieJarSettings.cs" />
+    <Compile Include="Net\UrlEncodingExtender.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\common\CompanyInfo.cs">
+      <Link>Properties\CompanyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\common\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="base2art.snk" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Net" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <!--  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />-->
+  <!--  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">-->
+  <!--    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />-->
+  <!--    <Error Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />-->
+  <!--  </Target>-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

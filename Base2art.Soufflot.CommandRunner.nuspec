@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Base2art.Soufflot.CommandRunner</id>
+        <version>1.0.0.0</version>
+        <authors>Scott Youngblut</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A Core API for Running WebSites with an Owin Stack</description>
+        <dependencies>
+          <dependency id="Base2art.Bcl" version="1.0.0.0" />
+          <dependency id="Base2art.Collections" version="1.0.0.1" />
+          <dependency id="Base2art.Validation" version="1.0.0.0" />
+          <dependency id="Base2art.Soufflot" version="1.0.0.0" />
+        
+          <dependency id="Microsoft.Owin" version="3.0.1" />
+          <dependency id="Owin" version="1.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Soufflot.exe" target="lib\net\Soufflot.exe" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Soufflot.pdb" target="lib\net\Soufflot.pdb" />
+
+        
+        <file src="src\scripts\install.ps1" target="tools\install.ps1" />
+        <file src="src\scripts\soufflot-setup-env.ps1" target="tools\soufflot-setup-env.ps1" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Soufflot.exe" target="tools\Soufflot\Soufflot.exe" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Soufflot.exe.config" target="tools\Soufflot\Soufflot.exe.config" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Soufflot.pdb" target="tools\Soufflot\Soufflot.pdb" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Soufflot.MonkeyTail.dll" target="tools\Soufflot\Base2art.Soufflot.MonkeyTail.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Soufflot.MonkeyTail.pdb" target="tools\Soufflot\Base2art.Soufflot.MonkeyTail.pdb" />
+        
+        <!-- Soufflot -->
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Soufflot.dll" target="tools\Soufflot\Base2art.Soufflot.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Soufflot.pdb" target="tools\Soufflot\Base2art.Soufflot.pdb" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Soufflot.Extensions.dll" target="tools\Soufflot\Base2art.Soufflot.Extensions.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Soufflot.Extensions.pdb" target="tools\Soufflot\Base2art.Soufflot.Extensions.pdb" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Soufflot.Http.Owin.dll" target="tools\Soufflot\Base2art.Soufflot.Http.Owin.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Soufflot.Http.Owin.pdb" target="tools\Soufflot\Base2art.Soufflot.Http.Owin.pdb" />
+        
+        
+        <!-- Base2art -->
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Bcl.dll" target="tools\Soufflot\Base2art.Bcl.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Bcl.pdb" target="tools\Soufflot\Base2art.Bcl.pdb" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Collections.dll" target="tools\Soufflot\Base2art.Collections.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Collections.pdb" target="tools\Soufflot\Base2art.Collections.pdb" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Serialization.dll" target="tools\Soufflot\Base2art.Serialization.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Serialization.pdb" target="tools\Soufflot\Base2art.Serialization.pdb" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Validation.dll" target="tools\Soufflot\Base2art.Validation.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.Validation.pdb" target="tools\Soufflot\Base2art.Validation.pdb" />
+        
+        
+        <!-- Monkey Tail -->
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.MonkeyTail.Api.dll" target="tools\Soufflot\Base2art.MonkeyTail.Api.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.MonkeyTail.Api.pdb" target="tools\Soufflot\Base2art.MonkeyTail.Api.pdb" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.MonkeyTail.Api.Futures.dll" target="tools\Soufflot\Base2art.MonkeyTail.Api.Futures.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.MonkeyTail.Api.Futures.pdb" target="tools\Soufflot\Base2art.MonkeyTail.Api.Futures.pdb" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.MonkeyTail.Compiler.dll" target="tools\Soufflot\Base2art.MonkeyTail.Compiler.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Base2art.MonkeyTail.Compiler.pdb" target="tools\Soufflot\Base2art.MonkeyTail.Compiler.pdb" />
+    
+        <!-- Third Party --> 
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\CommandLine.dll" target="tools\Soufflot\CommandLine.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Owin.dll" target="tools\Soufflot\Owin.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Microsoft.Owin.Hosting.dll" target="tools\Soufflot\Microsoft.Owin.Hosting.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Microsoft.Owin.Host.HttpListener.dll" target="tools\Soufflot\Microsoft.Owin.Host.HttpListener.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Microsoft.Owin.dll" target="tools\Soufflot\Microsoft.Owin.dll" />
+        <file src="src\Base2art.Soufflot.CommandRunner\bin\Release\Microsoft.Owin.Diagnostics.dll" target="tools\Soufflot\Microsoft.Owin.Diagnostics.dll" />
+        
+    </files>
+</package>

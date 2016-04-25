@@ -1,0 +1,18 @@
+{
+  Procedure : { Organization : "Base2art", Product : "ReportGenerator", Version : "1.0.0.0" },
+  ProcedureParameters : { Organization : "Base2art", Product : "ReportGenerator-Parameters", Version : "1.0.0.0" },
+  Parameters : {
+    CoverageRunner : {
+      Procedure : { Organization : "Base2art", Product : "OpenCover", Version : "1.0.0.0" },
+      ProcedureParameters : { Organization : "Base2art", Product : "OpenCover-Parameters", Version : "1.0.0.0" },
+      Parameters : {
+        TestRunner : {
+          Procedure : { Organization : "Base2art", Product : "NUnit", Version : "2.6" },
+          ProcedureParameters : { Organization : "Base2art", Product : "NUnit-Parameters", Version : "2.6" },
+          Parameters : { EndsWithFilter : "Features.dll" }
+        },
+        "Filter" : "+[Base2art.Soufflot]* +[Base2art.Soufflot.Extensions]* +[Base2art.Rest]* +[Base2art.Soufflot.Http.Owin]*",
+      }
+    }
+  }
+}

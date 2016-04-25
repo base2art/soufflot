@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88F7E79A-9E93-459C-8595-AFA703B4EA8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Base2art.Soufflot</RootNamespace>
+    <AssemblyName>Base2art.Soufflot.Extensions</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\packages\Base2art.Keys.1.0.0\content\base2art.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Base2art.Bcl">
+      <HintPath>..\..\packages\Base2art.Bcl.1.0.0.0\lib\net\Base2art.Bcl.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.Collections">
+      <HintPath>..\..\packages\Base2art.Collections.1.0.0.1\lib\net\Base2art.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.Serialization">
+      <HintPath>..\..\packages\Base2art.Serialization.1.0.0.1\lib\net\Base2art.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.Validation">
+      <HintPath>..\..\packages\Base2art.Validation.1.0.0.0\lib\net\Base2art.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\Routing\Expressive\ConstantRouteExpressionParameter.cs" />
+    <Compile Include="Api\Routing\Expressive\Routable.cs" />
+    <Compile Include="Api\Routing\Expressive\ExpressiveRouteData.cs" />
+    <Compile Include="Api\Routing\Expressive\ExpressiveRouter.cs" />
+    <Compile Include="Api\Routing\Expressive\ExpressiveRouterExtender.cs" />
+    <Compile Include="Api\Routing\Expressive\ExpressiveRouteValidator.cs" />
+    <Compile Include="Api\Routing\Expressive\ExpressiveRouteValidator1.cs" />
+    <Compile Include="Api\Routing\Expressive\ExpressiveRouteValidatorBase.cs" />
+    <Compile Include="Api\Routing\Expressive\IExpressiveReverseRouter.cs" />
+    <Compile Include="Api\Routing\Expressive\IExpressiveRouteManager.cs" />
+    <Compile Include="Api\Routing\Expressive\IRoutable.cs" />
+    <Compile Include="Api\Routing\Expressive\RegexExpressiveRouterRegistration.cs" />
+    <Compile Include="Api\Routing\Expressive\RouteInfo.cs" />
+    <Compile Include="Api\Routing\Expressive\StringExpressiveRouterRegistration.cs" />
+    <Compile Include="Api\Routing\Expressive\ExpressiveRouteMatcher.cs" />
+    <Compile Include="Api\Routing\Expressive\FunctionalRouteExpressionParameter.cs" />
+    <Compile Include="Api\Routing\Expressive\IExpressiveRouter.cs" />
+    <Compile Include="Api\Routing\Expressive\MappedHostExpressiveRouter.cs" />
+    <Compile Include="Api\Routing\Expressive\RouteExpressionParameter.cs" />
+    <Compile Include="Api\Routing\RouteData.cs" />
+    <Compile Include="Api\Routing\Expressive\RouteExpressionTree.cs" />
+    <Compile Include="Api\Routing\Functional\FunctionalNonRenderingControllerSearchDelegate.cs" />
+    <Compile Include="Api\Routing\Functional\FunctionalRenderingControllerSearchDelegate.cs" />
+    <Compile Include="Api\Routing\Functional\FunctionalRouteData.cs" />
+    <Compile Include="Api\Routing\Functional\INonRenderingControllerSearchDelegate.cs" />
+    <Compile Include="Api\Routing\Functional\IRenderingControllerSearchDelegate.cs" />
+    <Compile Include="Api\Routing\Functional\FunctionalRouter.cs" />
+    <Compile Include="Http\HttpRequestBody.cs" />
+    <Compile Include="Mvc\AssetsController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\common\CompanyInfo.cs">
+      <Link>Properties\CompanyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\common\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
+    <Compile Include="StringExtender.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Base2art.Soufflot\Base2art.Soufflot.csproj">
+      <Project>{D9179312-4A21-45FD-9619-BE212F983E6A}</Project>
+      <Name>Base2art.Soufflot</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

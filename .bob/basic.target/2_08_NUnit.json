@@ -1,0 +1,5 @@
+{
+      Procedure : { Organization : "Base2art", Product : "NUnit", Version : "2.6" },
+      ProcedureParameters : { Organization : "Base2art", Product : "NUnit-Parameters", Version : "2.6" },
+      Parameters : { EndsWithFilter : "Features.dll" }
+}

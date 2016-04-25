@@ -1,0 +1,8 @@
+{
+  "LifecyclePosition": {
+    "SiteLifecyclePhase": "None",
+    "DefaultLifecyclePhase": "Install",
+    "CleanLifecyclePhase": "PostClean"
+  },
+  Procedures: []
+}

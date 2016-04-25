@@ -1,0 +1,14 @@
+{
+      Procedure : { Organization : "Base2art", Product : "MSBuild", Version : "4.0.0.0" },
+      ProcedureParameters : { Organization : "Base2art", Product : "MSBuild-Parameters", Version : "4.0.0.0" },
+      Parameters : { 
+        BuildArgs : [ 
+          "/verbosity:quiet",
+          "/m",
+          "/nologo",
+          "/p:DebugSymbols=true",
+          "/p:DebugType=Full",
+          "/p:PlatformTarget=AnyCPU"
+        ]
+      }
+}

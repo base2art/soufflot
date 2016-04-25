@@ -1,0 +1,8 @@
+{
+  Procedure : { Organization : "Base2art", Product : "NuGet-Package-Install", Version : "1.0.0.0" },
+  ProcedureParameters : { Organization : "Base2art", Product : "NuGet-Package-Install-Parameters", Version : "1.0.0.0" },
+  Parameters : { 
+    PackageName : "OpenCover",
+    PackageVersion : "4.5.3522"
+  }
+}

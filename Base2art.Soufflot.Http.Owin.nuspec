@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Base2art.Soufflot.Http.Owin</id>
+        <version>1.0.0.0</version>
+        <authors>Scott Youngblut</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A Core API for Running WebSites with an Owin Stack</description>
+        <dependencies>
+          <dependency id="Base2art.Bcl" version="1.0.0.0" />
+          <dependency id="Base2art.Collections" version="1.0.0.1" />
+          <dependency id="Base2art.Validation" version="1.0.0.0" />
+          <dependency id="Base2art.Soufflot" version="1.0.0.0" />
+        
+          <dependency id="Microsoft.Owin" version="3.0.1" />
+          <dependency id="Owin" version="1.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="src\Base2art.Soufflot.Http.Owin\bin\Release\Base2art.Soufflot.Http.Owin.dll" target="lib\net\Base2art.Soufflot.Http.Owin.dll" />
+        <file src="src\Base2art.Soufflot.Http.Owin\bin\Release\Base2art.Soufflot.Http.Owin.pdb" target="lib\net\Base2art.Soufflot.Http.Owin.pdb" />
+    </files>
+</package>

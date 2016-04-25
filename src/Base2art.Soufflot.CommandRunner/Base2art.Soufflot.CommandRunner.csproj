@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A73C7C8-85B1-426B-907A-9520B161A4C7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Base2art.Soufflot.CommandRunner</RootNamespace>
+    <AssemblyName>Soufflot</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\packages\Base2art.Keys.1.0.0\content\base2art.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <StartAction>Project</StartAction>
+    <StartWorkingDirectory>C:\Users\IEUser\code\base2art.Soufflot.pack\src\samples\scott</StartWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Base2art.Bcl">
+      <HintPath>..\..\packages\Base2art.Bcl.1.0.0.0\lib\net\Base2art.Bcl.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.Collections">
+      <HintPath>..\..\packages\Base2art.Collections.1.0.0.1\lib\net\Base2art.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.MonkeyTail.Api">
+      <HintPath>..\..\packages\Base2art.MonkeyTail.Api.1.0.0.0\lib\net\Base2art.MonkeyTail.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.MonkeyTail.Api.Futures">
+      <HintPath>..\..\packages\Base2art.MonkeyTail.Api.1.0.0.0\lib\net\Base2art.MonkeyTail.Api.Futures.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.MonkeyTail.Compiler">
+      <HintPath>..\..\packages\Base2art.MonkeyTail.Compiler.Console.1.0.0.0\lib\net\Base2art.MonkeyTail.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.Serialization">
+      <HintPath>..\..\packages\Base2art.Serialization.1.0.0.1\lib\net\Base2art.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Base2art.Validation">
+      <HintPath>..\..\packages\Base2art.Validation.1.0.0.0\lib\net\Base2art.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandLine">
+      <HintPath>..\..\packages\CommandLineParser.2.0.275-beta\lib\net45\CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Diagnostics">
+      <HintPath>..\..\packages\Microsoft.Owin.Diagnostics.3.0.1\lib\net45\Microsoft.Owin.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting">
+      <HintPath>..\..\packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\Util\FileSystemExtender.cs" />
+    <Compile Include="AppDomainAssemblyResolver.cs" />
+    <Compile Include="ApplicationRunner.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Config\CommonSettingsWrapper.cs" />
+    <Compile Include="ExceptionUtil.cs" />
+    <Compile Include="IApplicationRunner.cs" />
+    <EmbeddedResource Include="Resx\Conf\ApplicationBuilder.cs" />
+    <EmbeddedResource Include="Resx\Conf\CustomRoutes.cs" />
+    <Compile Include="SoufflotExecutor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\common\CompanyInfo.cs">
+      <Link>Properties\CompanyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\common\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
+    <Compile Include="SharpJsonSerializer.cs" />
+    <Compile Include="Tasks\RunTask.cs" />
+    <Compile Include="Tasks\GenerateOptions.cs" />
+    <Compile Include="Tasks\GeneratorTask.cs" />
+    <Compile Include="Tasks\InstallNuGetOptions.cs" />
+    <Compile Include="Tasks\InstallNuGetTask.cs" />
+    <Compile Include="Tasks\RestoreNuGetOptions.cs" />
+    <Compile Include="Tasks\RestoreNuGetTask.cs" />
+    <Compile Include="Tasks\RunOptions.cs" />
+    <Compile Include="Tasks\TaskBase.cs" />
+    <Compile Include="Tasks\UpdateNugetConfigOptions.cs" />
+    <Compile Include="Tasks\UpdateNugetConfigTask.cs" />
+    <Compile Include="Util\CommandExecutor.cs" />
+    <Compile Include="Util\CommandExecutorBuilder.cs" />
+    <Compile Include="Util\CommandExecutorParameters.cs" />
+    <Compile Include="Util\NativeMethods.cs" />
+    <Compile Include="WebServer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Resx\base.csproj" />
+    <EmbeddedResource Include="Resx\base.csproj.DotSettings" />
+    <EmbeddedResource Include="Resx\base.sln" />
+    <EmbeddedResource Include="Resx\base.ViewModels.csproj" />
+    <EmbeddedResource Include="Resx\nuget.config" />
+    <EmbeddedResource Include="Resx\packages.config" />
+    <EmbeddedResource Include="Resx\Project\Views.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Api" />
+    <Folder Include="Api\Util" />
+    <Folder Include="Config" />
+    <Folder Include="Resx" />
+    <Folder Include="Resx\Conf" />
+    <Folder Include="Resx\Project" />
+    <Folder Include="Tasks" />
+    <Folder Include="Util" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Base2art.Soufflot\Base2art.Soufflot.csproj">
+      <Project>{D9179312-4A21-45FD-9619-BE212F983E6A}</Project>
+      <Name>Base2art.Soufflot</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

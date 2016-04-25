@@ -1,0 +1,16 @@
+{
+  References : [
+    {
+      Name : "App.ViewModels.BASE_NAME",
+      HintPath : "target\\bin\\App.ViewModels.BASE_NAME.dll"
+    },
+    {
+      Name : "Base2art.MonkeyTail.Api.Futures",
+      HintPath : "Project\\lib\\Base2art.MonkeyTail.Api.Futures.0.0.1.0\\lib\\net\\Base2art.MonkeyTail.Api.Futures.dll"
+    },
+    {
+      Name : "Base2art.PlayN.Pack",
+      HintPath : "Project\\lib\\Base2art.PlayN.Pack.0.0.1.0\\lib\\net\\Base2art.PlayN.Pack.dll"
+    }
+  ]
+}
