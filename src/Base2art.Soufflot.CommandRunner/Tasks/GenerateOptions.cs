@@ -9,8 +9,7 @@
         [Option('d', "directory", HelpText = "The Base Directory")]
         public string Directory { get; set; }
 
-        [Option('a', "appName", HelpText = "The name of app")]
+        [Option('a', "appName", HelpText = "The name of app", Required = true)]
         public string AppName { get; set; }
 	}
-	
 }

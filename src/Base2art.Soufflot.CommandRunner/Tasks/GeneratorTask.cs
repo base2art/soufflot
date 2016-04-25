@@ -52,41 +52,41 @@
             
             this.WriteAllText(
                 Path.Combine(directory, "app.csproj"),
-                this.GetResourceClean("Base2art.PlayN.Pack.Generator.Console.Resx.base.csproj"));
+                this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.base.csproj"));
             
             this.WriteAllText(
                 Path.Combine(directory, "app.csproj.DotSettings"),
-                this.GetResourceClean("Base2art.PlayN.Pack.Generator.Console.Resx.base.csproj.DotSettings"));
+                this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.base.csproj.DotSettings"));
             
             
             this.WriteAllText(
                 Path.Combine(directory, "app.ViewModels.csproj"),
-                this.GetResourceClean("Base2art.PlayN.Pack.Generator.Console.Resx.base.ViewModels.csproj"));
+                this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.base.ViewModels.csproj"));
             
             this.WriteAllText(
                 Path.Combine(directory, "app.ViewModels.csproj.DotSettings"),
-                this.GetResourceClean("Base2art.PlayN.Pack.Generator.Console.Resx.base.csproj.DotSettings"));
+                this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.base.csproj.DotSettings"));
             
             
             this.WriteAllText(
                 Path.Combine(directory, "app.sln"),
-                this.GetResourceClean("Base2art.PlayN.Pack.Generator.Console.Resx.base.sln"));
+                this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.base.sln"));
             
             this.WriteAllText(
                 Path.Combine(directory, "Conf\\ApplicationBuilder.cs"),
-                this.GetResourceClean("Base2art.PlayN.Pack.Generator.Console.Resx.Conf.ApplicationBuilder.cs"));
+                this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.Conf.ApplicationBuilder.cs"));
             
             this.WriteAllText(
                 Path.Combine(directory, "Conf\\CustomRoutes.cs"),
-                this.GetResourceClean("Base2art.PlayN.Pack.Generator.Console.Resx.Conf.CustomRoutes.cs"));
+                this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.Conf.CustomRoutes.cs"));
             
             this.WriteAllText(
-                Path.Combine(directory, "Project\\Views.yaml"),
-                this.GetResourceClean("Base2art.PlayN.Pack.Generator.Console.Resx.Project.Views.yaml"));
+                Path.Combine(directory, "Project\\Views.json"),
+                this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.Project.Views.json"));
             
             this.WriteAllText(
                 Path.Combine(directory, "NuGet.config"),
-                this.GetResourceClean("Base2art.PlayN.Pack.Generator.Console.Resx.nuget.config"));
+                this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.nuget.config"));
             
             this.WriteAllText(
                 Path.Combine(directory, "App.props"),
@@ -118,10 +118,10 @@
             
             add("Base2art.Bcl", "1.0.0", "net45");
             
-            add("Base2art.PlayN", "1.0.0", "net45");
-            add("Base2art.PlayN.Extensions", "1.0.0", "net45");
-            add("Base2art.PlayN.Http.Owin", "1.0.0", "net45");
-            add("Base2art.PlayN.Pack", "1.0.0", "net45");
+            add("Base2art.Soufflot", "1.0.0", "net45");
+            add("Base2art.Soufflot.Extensions", "1.0.0", "net45");
+            add("Base2art.Soufflot.Http.Owin", "1.0.0", "net45");
+            add("Base2art.Soufflot.CommandRunner", "1.0.0", "net45");
             
             add("Base2art.MonkeyTail.Api", "1.0.0", "net45");
             add("Base2art.MonkeyTail.Compiler.Console", "1.0.0", "net45");

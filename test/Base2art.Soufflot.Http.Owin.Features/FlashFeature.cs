@@ -20,7 +20,7 @@
             OwinContext secondContext = OwinExtender.CreateRequestForPath("/flash-get?key-name=scott");
             secondContext.SetCookies(context.GetCookies());
             var result = secondContext.ProcessRequest(this.Manager, null, this.CommonSalt, new InMemoryLogger(LogLevels.Off));
-            result.Content.Body.AsString().Should().Be("");
+            result.Content.BodyAsString.Should().Be("");
         }
 
         [Test]
@@ -32,7 +32,7 @@
             OwinContext secondContext = OwinExtender.CreateRequestForPath("/flash-get?key-name=scott");
             secondContext.SetCookies(context.GetCookies());
             var result = secondContext.ProcessRequest(this.Manager, null, this.CommonSalt, new InMemoryLogger(LogLevels.Off));
-            result.Content.Body.AsString().Should().Be("youngblut");
+            result.Content.BodyAsString.Should().Be("youngblut");
         }
     }
 }

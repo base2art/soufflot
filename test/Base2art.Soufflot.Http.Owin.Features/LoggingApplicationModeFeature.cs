@@ -38,8 +38,8 @@ namespace Base2art.Soufflot.Http.Owin
             message.ToString().Should().Contain("[ApplicationError]");
             message.ToString().Should().Contain("Op Ex");
 //            rezult.Content.Body.Should().Contain("[ApplicationError]");
-            rezult.Content.Body.AsString().Should().Contain("Op Ex");
-            rezult.Content.Body.AsString().Should().Contain("Oh Boy!");
+            rezult.Content.BodyAsString.Should().Contain("Op Ex");
+            rezult.Content.BodyAsString.Should().Contain("Oh Boy!");
         }
 
         [Test]

@@ -21,7 +21,7 @@
             OwinContext secondContext = OwinExtender.CreateRequestForPath("/session-get?key-name=scott");
             secondContext.SetCookies(context.GetCookies());
             var result = secondContext.ProcessRequest(this.Manager, null, this.CommonSalt, new NullLogger());
-            result.Content.Body.AsString().Should().Be("youngblut");
+            result.Content.BodyAsString.Should().Be("youngblut");
         }
     }
 }

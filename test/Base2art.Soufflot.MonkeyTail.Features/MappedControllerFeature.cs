@@ -24,7 +24,7 @@
             var router = FakeRouter.Create(typeof(MappedController).GetClass().As<IRenderingController>());
             var a = new ControllerExecutionManager(new Application(ApplicationMode.Prod,Environment.CurrentDirectory, null), router);
             IResult rezult = a.ExecuteController(this.CreateContext(a.Application));
-            rezult.Content.Body.AsString().Should().Be("Content For @{MonkeyTail}");
+            rezult.Content.BodyAsString.Should().Be("Content For @{MonkeyTail}");
         }
 
         private IHttpContext CreateContext(IApplication application)

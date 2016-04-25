@@ -16,7 +16,7 @@
         {
             OwinContext context = OwinExtender.CreateRequestForPath("/redirect?dest=http://google.com");
             var result = context.ProcessRequest(this.Manager, null, this.CommonSalt, new NullLogger());
-            result.Content.Body.AsString().Should().Be("Location: http://google.com");
+            result.Content.BodyAsString.Should().Be("Location: http://google.com");
             context.Response.Headers.Get("Location").Should().Be("http://google.com");
         }
     }
