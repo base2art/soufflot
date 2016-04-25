@@ -2,6 +2,7 @@ namespace App.Conf
 {
     using Base2art.Soufflot.Api.Routing.Expressive;
     using Base2art.Soufflot.Http;
+    using App.Controllers;
 
     public class CustomRoutes : MappedLocalHostExpressiveRouter
     {
@@ -11,10 +12,8 @@ namespace App.Conf
             : base("localhost", new CurrentHttpContextProvider())
         {
             // REGISTER ROUTES HERE
-            /*
             this.RegisterRoute<HomeController>(HttpMethod.Get, null, "/");
             this.RegisterRoute<HomeController>(HttpMethod.Get, null, "/about-us", (a, b, c) => a.AboutUs(b, c));
-             */ 
         }
     }
 }

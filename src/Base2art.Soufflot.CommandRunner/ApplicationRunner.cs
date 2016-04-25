@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
     using System.IO;
     using System.Reflection;
 
@@ -38,7 +37,7 @@
             {
                 Port = port.GetValueOrDefault(58080),
                 ServerFactory = "Microsoft.Owin.Host.HttpListener",
-                AppStartup = "Base2art.PlayN.Http.Owin.Startup,Base2art.PlayN.Http.Owin"
+                AppStartup = typeof(Base2art.Soufflot.Http.Owin.Startup).FullName
             };
 
             try

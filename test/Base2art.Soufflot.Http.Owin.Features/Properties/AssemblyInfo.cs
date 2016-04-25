@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Base2art.PlayN.Http.Owin.Features")]
+[assembly: AssemblyTitle("Base2art.Soufflot.Http.Owin.Features")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Base2art.PlayN.Http.Owin.Features")]
+[assembly: AssemblyProduct("Base2art.Soufflot.Http.Owin.Features")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

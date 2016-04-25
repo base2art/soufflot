@@ -13,11 +13,11 @@
         {
         }
 
-        public LogLevel(byte logLevel, string name, string disSoufflotame)
+        public LogLevel(byte logLevel, string name, string displayName)
         {
             this.logLevel = logLevel;
             this.name = name;
-            this.displayName = disSoufflotame;
+            this.displayName = displayName;
         }
 
         public byte Level

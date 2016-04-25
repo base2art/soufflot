@@ -14,7 +14,7 @@
     // This is only for local development
     // In production this code is unused.
     // It comes from IIS7.5+
-    public class PlayNExecutor : Component
+    public class SoufflotExecutor : Component
     {
         private readonly string directoryToWatch;
 
@@ -37,7 +37,7 @@
         private WebServer webServer;
 
         private readonly IViewsSettings settings;
-        public PlayNExecutor(string directoryToWatch, IViewsSettings settings, IMessenger messenger, int? port)
+        public SoufflotExecutor(string directoryToWatch, IViewsSettings settings, IMessenger messenger, int? port)
         {
             this.settings = settings;
             this.port = port;

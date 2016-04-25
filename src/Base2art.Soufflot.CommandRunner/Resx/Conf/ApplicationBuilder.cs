@@ -10,7 +10,7 @@ namespace App.Conf
             return new Application(mode, rootDirectory, configProvider);
         }
 
-        private class Application : Base2art.PlayN.Api.Application
+        private class Application : Base2art.Soufflot.Api.Application
         {
             public Application(ApplicationMode mode, string rootDirectory, IConfigurationProvider configurationProvider)
                 : base(mode, rootDirectory, configurationProvider)

@@ -6,6 +6,7 @@
     using System.Text;
     using System.Xml;
     using System.Xml.Linq;
+    using Base2art.Soufflot.Mvc;
 
     public class GeneratorTask : TaskBase<GenerateOptions>
     {
@@ -25,7 +26,7 @@
             
             directory = Path.Combine(directory, this.Options.AppName);
             
-            if (!Path.IsPathRooted(directory)) 
+            if (!Path.IsPathRooted(directory))
             {
                 directory = Path.Combine(Environment.CurrentDirectory, directory);
             }
@@ -37,6 +38,7 @@
             createDirFrom("App\\Controllers");
             createDirFrom("App\\Models");
             createDirFrom("App\\Views");
+            createDirFrom("App\\ViewModels");
             createDirFrom("Conf");
             createDirFrom("Logs");
             createDirFrom("Project");
@@ -44,10 +46,18 @@
             createDirFrom("Public");
             createDirFrom("Tools");
             createDirFrom("Test");
-            //            createDirFrom(".nuget");
+            
             
             this.WriteAllText(
-                Path.Combine(directory, "project\\packages.config"),
+                Path.Combine(directory, "App\\Views\\Home.fs.html"),
+                this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.App.Views.Home.fs.html"));
+            
+            this.WriteAllText(
+                Path.Combine(directory, "App\\Controllers\\HomeController.cs"),
+                this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.App.Controllers.HomeController.cs"));
+            
+            this.WriteAllText(
+                Path.Combine(directory, "Project\\packages.config"),
                 this.PackagesXmlDocument().ToString(SaveOptions.None));
             
             this.WriteAllText(
@@ -96,6 +106,34 @@
                 Path.Combine(directory, "App\\Info.cs"),
                 "// Copyright (" + DateTimeOffset.UtcNow.Year + ")");
             
+            #if DEBUG
+            
+            var dlls = new Type[]
+            {
+                typeof(Base2art.Soufflot.IRoute), // "Base2art.Soufflot",
+                typeof(Base2art.Soufflot.StringExtender), // "Base2art.Soufflot.Extensions",
+                typeof(Base2art.Soufflot.Http.Owin.HttpContext), // "Base2art.Soufflot.Http.Owin",
+                typeof(MonketTailContentMapper), // "Base2art.Soufflot.MonkeyTail",
+            };
+            
+            foreach (var dll in dlls)
+            {
+                var assembly = dll.Assembly;
+                var nameContainer = assembly.GetName();
+                
+                var path = string.Format("Project\\lib\\{0}.{1}\\lib\\net\\", nameContainer.Name, nameContainer.Version);
+                createDirFrom(path);
+                
+                File.Copy(
+                    assembly.Location,
+                    Path.Combine(directory, path, nameContainer.Name + ".dll"),
+                    true);
+            }
+            
+            
+            
+            #endif
+            
             var installTask = new InstallNuGetTask(new InstallNuGetOptions()).InstallNuGet();
             
             new RestoreNuGetTask(new RestoreNuGetOptions { Directory = directory, NuGetPath = installTask }).Execute();
@@ -106,9 +144,9 @@
             var xmlElement = new XElement("packages");
             
             Action<string, string, string> add = (x, y, z) => xmlElement.Add(new XElement("package",
-                                                         new XAttribute("id", x),
-                                                         new XAttribute("version", y),
-                                                         new XAttribute("targetFramework", z)));
+                                                                                          new XAttribute("id", x),
+                                                                                          new XAttribute("version", y),
+                                                                                          new XAttribute("targetFramework", z)));
             
             add("Microsoft.Owin", "2.1.0", "net45");
             add("Microsoft.Owin.Host.SystemWeb", "2.1.0", "net45");
@@ -164,8 +202,8 @@
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("# Change Salt For Production");
-            sb.AppendLine("playn:salt = " + this.GetGuids(3));
-            sb.AppendLine("playn:app-builder-class-name = App.Conf.ApplicationBuilder, App.BASE_NAME");
+            sb.AppendLine("soufflot:salt = " + this.GetGuids(3));
+            sb.AppendLine("soufflot:app-builder-class-name = App.Conf.ApplicationBuilder, App.BASE_NAME");
             return this.Clean(sb.ToString());
         }
 

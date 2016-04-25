@@ -77,7 +77,7 @@
             var salt = application.ConfigurationValue(CommonSettings.SaltKey);
             if (string.IsNullOrWhiteSpace(salt))
             {
-                throw new ApplicationException("You must set the salt in the configruation 'playn:salt'");
+                throw new ApplicationException("You must set the salt in the configruation 'soufflot:salt'");
             }
             return salt;
         }

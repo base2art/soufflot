@@ -3,11 +3,13 @@
 namespace Base2art.Soufflot.CommandRunner.Tasks
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using Base2art.MonkeyTail;
     using Base2art.MonkeyTail.Config;
     using Base2art.MonkeyTail.Diagnostics;
+    using Base2art.Soufflot.CommandRunner.Util;
     
     public class RunTask : TaskBase<RunOptions>
     {
@@ -35,6 +37,7 @@ namespace Base2art.Soufflot.CommandRunner.Tasks
             newViewSettings.Imports = optsSettings.Imports.Union(settings.Imports).ToArray();
             newViewSettings.References = optsSettings.References.Union(settings.References)
                 .Select(x => new Reference { HintPath = x.HintPath, Name = x.Name })
+                .Distinct(DelegatedEqualityComparer.Builder<Reference>().Build(x=> x.Name))
                 .ToArray();
             
             
@@ -66,7 +69,7 @@ namespace Base2art.Soufflot.CommandRunner.Tasks
             }
             
             
-            using (var executor = new PlayNExecutor(directory, settings, new ConsoleMessenger(), opts.Port))
+            using (var executor = new SoufflotExecutor(directory, settings, new ConsoleMessenger(), opts.Port))
             {
                 executor.Run();
             }

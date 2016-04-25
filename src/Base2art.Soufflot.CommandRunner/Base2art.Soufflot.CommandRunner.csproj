@@ -112,6 +112,7 @@
     <Compile Include="IApplicationRunner.cs" />
     <EmbeddedResource Include="Resx\Conf\ApplicationBuilder.cs" />
     <EmbeddedResource Include="Resx\Conf\CustomRoutes.cs" />
+    <EmbeddedResource Include="Resx\App\Controllers\HomeController.cs" />
     <Compile Include="SoufflotExecutor.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -138,6 +139,8 @@
     <Compile Include="Util\CommandExecutor.cs" />
     <Compile Include="Util\CommandExecutorBuilder.cs" />
     <Compile Include="Util\CommandExecutorParameters.cs" />
+    <Compile Include="Util\DelegatedEqualityBuilder.cs" />
+    <Compile Include="Util\DelegatedEqualityComparer.cs" />
     <Compile Include="Util\NativeMethods.cs" />
     <Compile Include="WebServer.cs">
       <SubType>Component</SubType>
@@ -153,6 +156,7 @@
     <EmbeddedResource Include="Resx\nuget.config" />
     <EmbeddedResource Include="Resx\packages.config" />
     <EmbeddedResource Include="Resx\Project\Views.json" />
+    <EmbeddedResource Include="Resx\App\Views\Home.fs.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Api" />
@@ -160,11 +164,26 @@
     <Folder Include="Config" />
     <Folder Include="Resx" />
     <Folder Include="Resx\Conf" />
+    <Folder Include="Resx\App\Controllers" />
+    <Folder Include="Resx\App" />
+    <Folder Include="Resx\App\Views" />
     <Folder Include="Resx\Project" />
     <Folder Include="Tasks" />
     <Folder Include="Util" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Base2art.Soufflot.Extensions\Base2art.Soufflot.Extensions.csproj">
+      <Project>{88F7E79A-9E93-459C-8595-AFA703B4EA8B}</Project>
+      <Name>Base2art.Soufflot.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Base2art.Soufflot.Http.Owin\Base2art.Soufflot.Http.Owin.csproj">
+      <Project>{16FE843A-D9F6-4554-B37C-6D255E61D305}</Project>
+      <Name>Base2art.Soufflot.Http.Owin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Base2art.Soufflot.MonkeyTail\Base2art.Soufflot.MonkeyTail.csproj">
+      <Project>{6E81CCD3-F604-4F4F-970F-1BB1243667C5}</Project>
+      <Name>Base2art.Soufflot.MonkeyTail</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Base2art.Soufflot\Base2art.Soufflot.csproj">
       <Project>{D9179312-4A21-45FD-9619-BE212F983E6A}</Project>
       <Name>Base2art.Soufflot</Name>

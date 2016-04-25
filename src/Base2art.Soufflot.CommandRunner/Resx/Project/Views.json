@@ -1,16 +1,20 @@
 {
   References : [
     {
-      Name : "App.ViewModels.BASE_NAME",
-      HintPath : "target\\bin\\App.ViewModels.BASE_NAME.dll"
+      Name : "Base2art.Bcl",
+      HintPath : "Project\\lib\\Base2art.Bcl.1.0.0.0\\lib\\net\\Base2art.Bcl.dll"
+    },
+    {
+      Name : "Base2art.MonkeyTail.Api",
+      HintPath : "Project\\lib\\Base2art.MonkeyTail.Api.1.0.0.0\\lib\\net\\Base2art.MonkeyTail.Api.dll"
     },
     {
       Name : "Base2art.MonkeyTail.Api.Futures",
-      HintPath : "Project\\lib\\Base2art.MonkeyTail.Api.Futures.0.0.1.0\\lib\\net\\Base2art.MonkeyTail.Api.Futures.dll"
+      HintPath : "Project\\lib\\Base2art.MonkeyTail.Api.1.0.0.0\\lib\\net\\Base2art.MonkeyTail.Api.Futures.dll"
     },
     {
-      Name : "Base2art.PlayN.Pack",
-      HintPath : "Project\\lib\\Base2art.PlayN.Pack.0.0.1.0\\lib\\net\\Base2art.PlayN.Pack.dll"
+      Name : "Base2art.Soufflot.MonkeyTail",
+      HintPath : "Project\\lib\\Base2art.Soufflot.MonkeyTail.1.0.0.0\\lib\\net\\Base2art.Soufflot.MonkeyTail.dll"
     }
   ]
 }
