@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Http.Owin
+namespace Base2art.Soufflot.Http.Owin
 {
     using Base2art.Soufflot.Api.Diagnostics;
 
@@ -20,6 +20,4 @@
             context.Response.Headers.Get("Location").Should().Be("http://google.com");
         }
     }
-
-    
 }

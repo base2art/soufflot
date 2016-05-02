@@ -1,4 +1,4 @@
-﻿namespace Base2art.PlayN.Features.Linq
+namespace Base2art.PlayN.Features.Linq
 {
     using System.Collections.Generic;
     using System.Linq;

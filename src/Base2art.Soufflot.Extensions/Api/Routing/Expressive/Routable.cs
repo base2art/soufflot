@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api.Routing.Expressive
+namespace Base2art.Soufflot.Api.Routing.Expressive
 {
     using System;
     using System.Collections.Generic;
@@ -51,7 +51,6 @@
                 routeDatum.Where(
                     x => ExpressiveRouteMatcher.IsMatch(this.host, x.Host, StringComparison.OrdinalIgnoreCase));
             
-
             // ReSharper disable once ReplaceWithSingleCallToFirstOrDefault
             var routeData = routeDatum
                 .Where(x => x.Type == typeof(T))

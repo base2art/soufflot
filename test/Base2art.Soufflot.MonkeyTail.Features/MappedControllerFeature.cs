@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Pack.Features
+namespace Base2art.Soufflot.Pack.Features
 {
     using System;
 

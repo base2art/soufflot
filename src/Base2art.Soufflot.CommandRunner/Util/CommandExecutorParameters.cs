@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.CommandRunner.Util
+namespace Base2art.Soufflot.CommandRunner.Util
 {
     using System;
 
@@ -33,4 +33,3 @@
         }
     }
 }
-

@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Http
+namespace Base2art.Soufflot.Http
 {
     public interface ICurrentHttpContextProvider
     {

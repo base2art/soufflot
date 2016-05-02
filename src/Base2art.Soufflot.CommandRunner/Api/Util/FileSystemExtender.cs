@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.CommandRunner.Api.Util
+namespace Base2art.Soufflot.CommandRunner.Api.Util
 {
     using System.IO;
 

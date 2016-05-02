@@ -1,4 +1,3 @@
-﻿
 namespace Base2art.PlayN.Security
 {
     using System.Linq;

@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api.Diagnostics
+namespace Base2art.Soufflot.Api.Diagnostics
 {
     using System;
     public class ConsoleLoggerFactory : IRequestLoggerFactory, IApplicationLoggerFactory

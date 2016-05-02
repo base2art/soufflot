@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.CommandRunner.Tasks
+namespace Base2art.Soufflot.CommandRunner.Tasks
 {
     using System;
     using CommandLine;
@@ -8,4 +8,3 @@
     {
     }
 }
-

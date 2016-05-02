@@ -1,4 +1,4 @@
-﻿namespace App.Controllers
+namespace App.Controllers
 {
     using Base2art.Soufflot.Mvc;
     using Base2art.Soufflot.Http;

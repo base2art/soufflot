@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Samples.Session
+namespace Base2art.Soufflot.Samples.Session
 {
     using System;
     using System.Collections.Generic;

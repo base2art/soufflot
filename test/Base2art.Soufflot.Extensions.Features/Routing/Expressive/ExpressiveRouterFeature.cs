@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Routing.Expressive
+namespace Base2art.Soufflot.Routing.Expressive
 {
     using System;
     using System.Collections.Generic;
@@ -13,7 +13,7 @@
     using FluentAssertions;
 
     using NUnit.Framework;
-	using Base2art.Soufflot.Fixtures;
+    using Base2art.Soufflot.Fixtures;
 
     [TestFixture]
     public class ExpressiveRouterFeature : ExpressiveRouterBaseFeature
@@ -209,7 +209,6 @@
             router.FindRouteWith<PersonController>(1, "test").Should().BeNull();
             router.FindNamedRoute<PersonController>("GetUser").Should().BeNull();
 
-
             router.For<PersonController>()
                 .With<int>((x, y, z, id) => x.GetUser(y, z, 3))
                 .Explode().Should().Be("/api/person/3/");
@@ -227,7 +226,6 @@
             router.For<PersonController>()
                             .With((x, y, z) => x.GetUser(y, z, i))
                             .Explode().Should().Be("/api/person/4/");
-
 
             // Correctly fails to Compile
             // router.For<PersonController>()
@@ -251,7 +249,6 @@
             router.FindRouteWith<PersonController>(2).Should().BeNull();
             router.FindRouteWith<PersonController>(1, "test").Should().BeNull();
             router.FindNamedRoute<PersonController>("GetUser").Should().BeNull();
-
 
             router.For<PersonController>()
                 .With<int>((x, y, z, id) => x.GetUserWithName(y, z, 3, "Other"))
@@ -369,7 +366,6 @@
         }
     }
 }
-
 
 /*
  

@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Mvc
+namespace Base2art.Soufflot.Mvc
 {
     using System.Net;
 

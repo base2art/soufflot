@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api.Routing.Expressive
+namespace Base2art.Soufflot.Api.Routing.Expressive
 {
     using System;
     using System.Collections.Generic;
@@ -50,7 +50,6 @@
                     .Method(func);
             }
         }
-
 
         // This method is only useful if you are in a single domain Application
         public static IRoute FindRoute<TController>(this IExpressiveReverseRouter router)

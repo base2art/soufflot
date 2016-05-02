@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api
+namespace Base2art.Soufflot.Api
 {
     using System;
     using System.Linq;
@@ -60,7 +60,6 @@
             var queryString = this.QsMultiMap("http://www.google.com?&&&&");
             queryString.Keys.Count().Should().Be(0);
         }
-
 
         [Test]
         public void ShouldLoadQueryStringMapStandard()

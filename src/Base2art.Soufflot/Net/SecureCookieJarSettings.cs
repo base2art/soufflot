@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Net
+namespace Base2art.Soufflot.Net
 {
     using System;
     using System.Linq;

@@ -1,11 +1,10 @@
-﻿namespace Base2art.Soufflot.Mvc
+namespace Base2art.Soufflot.Mvc
 {
     using System.Net;
 
     using Base2art.Soufflot.Api;
     using Base2art.Soufflot.Http;
     
-
     public static class ContentResults
     {
         public static IResult BadRequest(this IHttpContext Routed)

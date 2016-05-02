@@ -1,4 +1,4 @@
-﻿[assembly: Microsoft.Owin.OwinStartup(typeof(Base2art.Soufflot.Http.Owin.Startup))]
+[assembly: Microsoft.Owin.OwinStartup(typeof(Base2art.Soufflot.Http.Owin.Startup))]
 namespace Base2art.Soufflot.Http.Owin
 {
     using System;

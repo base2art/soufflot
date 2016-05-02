@@ -40,7 +40,6 @@ namespace Base2art.Soufflot.Http.Owin
             CurrentHttpContextProvider.ThreadSpecificHttpContext = httpContext;
             httpContext.Unpack();
 
-
             logger.Log(
                 string.Format("{0} {1}: {2}", context.Request.Scheme, context.Request.Method, context.Request.Path),
                 LogLevels.ApplicationInfo);
@@ -68,7 +67,6 @@ namespace Base2art.Soufflot.Http.Owin
                                                 ContentType = "text/plain"
                                             });
             }
-
 
             httpContext.Pack();
             CurrentHttpContextProvider.ThreadSpecificHttpContext = null;

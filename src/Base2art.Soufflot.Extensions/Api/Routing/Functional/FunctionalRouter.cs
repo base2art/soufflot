@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api.Routing.Functional
+namespace Base2art.Soufflot.Api.Routing.Functional
 {
     using System.Collections.Generic;
 

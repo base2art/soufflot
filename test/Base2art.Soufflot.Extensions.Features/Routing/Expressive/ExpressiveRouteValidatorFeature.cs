@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Routing.Expressive
+namespace Base2art.Soufflot.Routing.Expressive
 {
     using System;
     using System.Linq;
@@ -9,7 +9,7 @@
     using FluentAssertions;
 
     using NUnit.Framework;
-	using Base2art.Soufflot.Fixtures;
+    using Base2art.Soufflot.Fixtures;
 
     [TestFixture]
     public class ExpressiveRouteValidatorFeature
@@ -71,7 +71,6 @@
                     new ExpressiveRouteValidator<CustomController>().ValidateExpression(
                         (ctrlr, ctx, cld) => ctrlr.Execute(ctx, cld, 3));
                 }).ShouldNotThrow();
-
         }
 
         [Test]
@@ -85,7 +84,6 @@
             tree.Parameters[0].As<ConstantRouteExpressionParameter>().Value.Should().Be(3);
             tree.Parameters[1].As<FunctionalRouteExpressionParameter>().Name.Should().Be("path");
             tree.Parameters[2].As<ConstantRouteExpressionParameter>().Value.Should().Be(7);
-
         }
 
         [Test]

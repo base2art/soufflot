@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.CommandRunner
+namespace Base2art.Soufflot.CommandRunner
 {
     using System;
     using System.ComponentModel;
@@ -73,7 +73,6 @@
             Console.WriteLine("Watching Directory '{0}'...", directoryToWatch);
             Console.WriteLine("Press 'Control + Z' to exit");
             
-            
             var isControlC = false;
             while (!isControlC)
             {
@@ -82,7 +81,6 @@
                 && keyInfo.Modifiers == ConsoleModifiers.Control;
             }
         }
-
 
         private void ReloadApp()
         {
@@ -138,7 +136,6 @@
                 fsInfo.Delete(true);
             }
 
-
             var binDir = new DirectoryInfo(this.binPath);
             binDir.CopyTo(webServerBinDir, copySubDirs: true);
 
@@ -157,7 +154,6 @@
                 this.logFile.Dispose();
             }
         }
-        
         
         public class TextWriterLoggerWithFlush : ILogger
         {
@@ -179,7 +175,6 @@
         }
     }
 }
-
 
 /*
 //            var appCtx = new ApplicationContext();

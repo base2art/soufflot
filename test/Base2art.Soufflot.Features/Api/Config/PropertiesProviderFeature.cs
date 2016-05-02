@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api.Config
+namespace Base2art.Soufflot.Api.Config
 {
     using Base2art.Soufflot.Api.Config;
 

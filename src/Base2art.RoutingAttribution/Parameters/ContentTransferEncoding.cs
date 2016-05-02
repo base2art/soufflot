@@ -1,20 +1,14 @@
-﻿
 namespace Base2art.RoutingAttribution
 {
-	using System;
+    using System;
 
-	public enum ContentTransferEncoding
-	{
-		Base64,
-		QuotedPrintable,
-		BIT8,
-		BIT7,
-		Binary,
-		XToken
-	}
+    public enum ContentTransferEncoding
+    {
+        Base64,
+        QuotedPrintable,
+        BIT8,
+        BIT7,
+        Binary,
+        XToken
+    }
 }
-
-
-
-
-

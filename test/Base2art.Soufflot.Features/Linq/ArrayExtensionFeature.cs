@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Linq
+namespace Base2art.Soufflot.Linq
 {
     using System.Linq;
 

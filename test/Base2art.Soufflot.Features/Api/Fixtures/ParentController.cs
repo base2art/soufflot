@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api.Fixtures
+namespace Base2art.Soufflot.Api.Fixtures
 {
     using System.Collections.Generic;
     using System.Linq;

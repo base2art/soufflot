@@ -1,4 +1,3 @@
-﻿
 namespace Base2art.Soufflot.Mvc
 {
     using System;
@@ -86,7 +85,6 @@ namespace Base2art.Soufflot.Mvc
             return Process(parts, clean1)
                 ? Path.Combine(clean1.ToArray())
                 : null;
-            
         }
 
         private static bool Process(LinkedList<string> parts, Stack<string> clean, int i = 0)

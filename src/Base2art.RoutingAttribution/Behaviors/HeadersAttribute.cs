@@ -1,4 +1,3 @@
-﻿
 namespace Base2art.RoutingAttribution
 {
     using System;

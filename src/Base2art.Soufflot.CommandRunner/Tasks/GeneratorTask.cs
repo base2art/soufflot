@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.CommandRunner.Tasks
+namespace Base2art.Soufflot.CommandRunner.Tasks
 {
     using System;
     using System.IO;
@@ -47,7 +47,6 @@
             createDirFrom("Tools");
             createDirFrom("Test");
             
-            
             this.WriteAllText(
                 Path.Combine(directory, "App\\Views\\Home.fs.html"),
                 this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.App.Views.Home.fs.html"));
@@ -68,7 +67,6 @@
                 Path.Combine(directory, "app.csproj.DotSettings"),
                 this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.base.csproj.DotSettings"));
             
-            
             this.WriteAllText(
                 Path.Combine(directory, "app.ViewModels.csproj"),
                 this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.base.ViewModels.csproj"));
@@ -76,7 +74,6 @@
             this.WriteAllText(
                 Path.Combine(directory, "app.ViewModels.csproj.DotSettings"),
                 this.GetResourceClean("Base2art.Soufflot.CommandRunner.Resx.base.csproj.DotSettings"));
-            
             
             this.WriteAllText(
                 Path.Combine(directory, "app.sln"),
@@ -129,8 +126,6 @@
                     Path.Combine(directory, path, nameContainer.Name + ".dll"),
                     true);
             }
-            
-            
             
             #endif
             
@@ -220,4 +215,3 @@
         }
     }
 }
-

@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api
+namespace Base2art.Soufflot.Api
 {
     using System;
 
@@ -8,7 +8,6 @@
 
     using Base2art.Soufflot.Http;
 
-    
     public class Application : IApplication
     {
         private readonly ApplicationMode mode;
@@ -183,6 +182,4 @@
             return appLoggerFactory.Create(this.ApplicationLogLevel);
         }
     }
-    
-    
 }

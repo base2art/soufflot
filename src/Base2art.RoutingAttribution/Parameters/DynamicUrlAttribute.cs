@@ -1,4 +1,3 @@
-﻿
 namespace Base2art.RoutingAttribution
 {
     using System;
@@ -6,9 +5,6 @@ namespace Base2art.RoutingAttribution
     [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
     public class DynamicUrlAttribute : Attribute
     {
-        string Url{ get; set; }
+        public string Url { get; set; }
     }
 }
-
-
-

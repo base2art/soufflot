@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Routing.Expressive
+namespace Base2art.Soufflot.Routing.Expressive
 {
     using System.Text.RegularExpressions;
 

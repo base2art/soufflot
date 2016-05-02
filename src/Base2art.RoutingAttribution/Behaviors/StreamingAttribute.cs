@@ -1,14 +1,9 @@
-﻿
 namespace Base2art.RoutingAttribution
 {
-	using System;
+    using System;
 
-	[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
-	public class StreamingAttribute : Attribute
-	{
-	}
-	
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+    public class StreamingAttribute : Attribute
+    {
+    }
 }
-
-
-

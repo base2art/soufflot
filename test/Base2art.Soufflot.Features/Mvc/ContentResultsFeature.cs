@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Mvc
+namespace Base2art.Soufflot.Mvc
 {
     using System;
     using System.Net;
@@ -63,7 +63,6 @@
             this.Verify("/abc", HttpStatusCode.Redirect, context => context.Redirect("/abc"));
             this.Verify("/abc", HttpStatusCode.SeeOther, context => context.SeeOther("/abc"));
             this.Verify("/abc", HttpStatusCode.TemporaryRedirect, context => context.TemporaryRedirect("/abc"));
-
 
             this.Verify("/abc", HttpStatusCode.Found, context => context.Found(new Route("/abc")));
             this.Verify("/abc", HttpStatusCode.MovedPermanently, context => context.MovedPermanently(new Route("/abc")));

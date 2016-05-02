@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Http.Util
+namespace Base2art.Soufflot.Http.Util
 {
     using System.IO;
     using System.Text;
@@ -32,7 +32,6 @@
             }
         }
 
-        
         public static StringReadResult ReadFullyAsString(this Stream stream)
         {
             return ReadFullyAsString(stream, 0);
@@ -63,7 +62,6 @@
         }
     }
 }
-
 
 //            var memoryStream = stream as MemoryStream;
 //            if (memoryStream != null)

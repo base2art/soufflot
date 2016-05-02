@@ -1,11 +1,11 @@
-﻿namespace Base2art.Soufflot.Mvc
+namespace Base2art.Soufflot.Mvc
 {
-	using System;
+    using System;
     using System.Collections.Generic;
 
     using System.Diagnostics;
     using Base2art.Soufflot.Api;
-	using Base2art.Soufflot.Api.Diagnostics;
+    using Base2art.Soufflot.Api.Diagnostics;
     using Base2art.Soufflot.Http;
     using Base2art.Soufflot.Mvc;
 
@@ -50,7 +50,6 @@
             controller.NonRenderingRoutedItems.Should().BeEmpty();
         }
 
-        
         [Test]
         public void ShouldLoadChildNonRenderingController()
         {
@@ -63,25 +62,25 @@
         {
             IRenderingRouted controller = new TestChildRenderingController();
             
-			var nonRenderingControllers = controller.NonRenderingRoutedItems;
-			nonRenderingControllers.Length.Should().Be(2);
-			
-			var testHttpContext = new TestHttpContext();
-			nonRenderingControllers[0].Execute(testHttpContext);
-			var messages = ((InMemoryLogger)testHttpContext.Logger).Messages;
-			messages.Length.Should().Be(1);
-			messages[0].Message.Should().Be("Test");
-			
-			nonRenderingControllers[1].Execute(new TestHttpContext());
+            var nonRenderingControllers = controller.NonRenderingRoutedItems;
+            nonRenderingControllers.Length.Should().Be(2);
             
-			var renderingControllers = controller.RenderingRoutedItems;
-			renderingControllers.Length.Should().Be(3);
-			renderingControllers[0].RenderingRoutedItem.Execute(new TestHttpContext(), new List<PositionedResult>())
-			    .Content.BodyAsString.Should().Be("Here You Go");
-			renderingControllers[1].RenderingRoutedItem.Execute(new TestHttpContext(), new List<PositionedResult>())
-			    .Content.BodyAsString.Should().BeEmpty();
-			renderingControllers[2].RenderingRoutedItem.Execute(new TestHttpContext(), new List<PositionedResult>())
-			    .Content.BodyAsString.Should().BeEmpty();
+            var testHttpContext = new TestHttpContext();
+            nonRenderingControllers[0].Execute(testHttpContext);
+            var messages = ((InMemoryLogger)testHttpContext.Logger).Messages;
+            messages.Length.Should().Be(1);
+            messages[0].Message.Should().Be("Test");
+            
+            nonRenderingControllers[1].Execute(new TestHttpContext());
+            
+            var renderingControllers = controller.RenderingRoutedItems;
+            renderingControllers.Length.Should().Be(3);
+            renderingControllers[0].RenderingRoutedItem.Execute(new TestHttpContext(), new List<PositionedResult>())
+                .Content.BodyAsString.Should().Be("Here You Go");
+            renderingControllers[1].RenderingRoutedItem.Execute(new TestHttpContext(), new List<PositionedResult>())
+                .Content.BodyAsString.Should().BeEmpty();
+            renderingControllers[2].RenderingRoutedItem.Execute(new TestHttpContext(), new List<PositionedResult>())
+                .Content.BodyAsString.Should().BeEmpty();
         }
 
         private class TestRenderingController : SimpleRenderingController

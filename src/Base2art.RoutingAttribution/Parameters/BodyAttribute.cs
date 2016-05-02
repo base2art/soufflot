@@ -1,4 +1,3 @@
-﻿
 namespace Base2art.RoutingAttribution
 {
     using System;
@@ -7,8 +6,4 @@ namespace Base2art.RoutingAttribution
     public class BodyAttribute : Attribute
     {
     }
-    
-    
-    
 }
-

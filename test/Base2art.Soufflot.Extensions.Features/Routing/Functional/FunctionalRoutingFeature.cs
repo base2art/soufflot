@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Routing.Functional
+namespace Base2art.Soufflot.Routing.Functional
 {
     using System;
 
@@ -12,7 +12,7 @@
     using FluentAssertions;
 
     using NUnit.Framework;
-	using Base2art.Soufflot.Fixtures;
+    using Base2art.Soufflot.Fixtures;
 
     [TestFixture]
     public class FunctionalRoutingFeature
@@ -113,7 +113,6 @@
 //                    null);
     }
 }
-
 
 /*
             var a = new ControllerExecutionManager(new Application(), router);

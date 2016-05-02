@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.CommandRunner
+namespace Base2art.Soufflot.CommandRunner
 {
     using Base2art.MonkeyTail;
     using Base2art.Serialization;

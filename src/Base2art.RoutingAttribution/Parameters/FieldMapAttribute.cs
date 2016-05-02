@@ -1,15 +1,10 @@
-﻿
 namespace Base2art.RoutingAttribution
 {
-	using System;
+    using System;
 
-	[AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
-	public class FieldMapAttributeAttribute : Attribute
-	{
-		bool Encoded
-		{
-			get;
-			set;
-		}
-	}
+    [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
+    public class FieldMapAttributeAttribute : Attribute
+    {
+        public bool Encoded { get; set; }
+    }
 }

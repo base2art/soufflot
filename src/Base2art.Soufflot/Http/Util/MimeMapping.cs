@@ -1,4 +1,3 @@
-﻿
 using System;
 using System.Collections.Generic;
 
@@ -43,7 +42,6 @@ namespace Base2art.Soufflot.Http.Util
             this.EnsurePopulation();
             
             return this.mapping.ContainsKey(ext) ? this.mapping[ext] : this.DefaultContentType;
-            
         }
 
         protected virtual void Populate()

@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.CommandRunner.Tasks
+namespace Base2art.Soufflot.CommandRunner.Tasks
 {
     using System;
     using System.IO;
@@ -10,7 +10,7 @@
             : base(opts)
         {
         }
-	    
+        
         protected override void ExecuteInternal()
         {
             
@@ -21,7 +21,6 @@
             {
                 nuGetPath = Path.Combine(directory, "Tools\\nuget.exe");
             }
-            
             
             var packagesPath = Path.Combine(directory, "project\\packages.config");
             var appSlnPath = Path.Combine(directory, "app.sln");
@@ -50,4 +49,3 @@
         }
     }
 }
-

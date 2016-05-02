@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Routing.Expressive
+namespace Base2art.Soufflot.Routing.Expressive
 {
     using System;
     using System.Text.RegularExpressions;
@@ -108,8 +108,6 @@
                 .Should()
                 .BeFalse();
         }
-
-
 
         [Test]
         public void ShouldMatchArrays()

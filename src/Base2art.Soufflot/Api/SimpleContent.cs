@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api
+namespace Base2art.Soufflot.Api
 {
 
     public class SimpleContent : IContent
@@ -19,7 +19,6 @@
             }
         }
 
-        
         public string BodyAsString
         {
             get

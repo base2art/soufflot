@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.CommandRunner
+namespace Base2art.Soufflot.CommandRunner
 {
     using System;
     using System.ComponentModel;
@@ -87,7 +87,6 @@
                 this.outputBuffer.Info("Compile completed without errors...");
             }
 
-            
             Array.ForEach(this.fileSystemWatcher.Value, x =>
                 {
                     x.EnableRaisingEvents = true;

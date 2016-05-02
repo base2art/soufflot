@@ -1,12 +1,12 @@
-﻿namespace Base2art.Soufflot.Api
+namespace Base2art.Soufflot.Api
 {
     using System;
 
     using Base2art.ComponentModel;
     using Base2art.Soufflot.Api;
     using Base2art.Soufflot.Api.Diagnostics;
-	using Base2art.Soufflot.Http.Owin;
-	using Microsoft.Owin;
+    using Base2art.Soufflot.Http.Owin;
+    using Microsoft.Owin;
     using Base2art.Soufflot.Mvc;
 
     using FluentAssertions;
@@ -14,7 +14,7 @@
     using Base2art.Soufflot.Http;
 
     using NUnit.Framework;
-	using Base2art.Soufflot.Api.Fixtures;
+    using Base2art.Soufflot.Api.Fixtures;
 
     [TestFixture]
     public class ControllerExecutionManagerFeature
@@ -54,7 +54,6 @@
             CountingNonRenderingController.Count.Should().Be(1);
             SubCountingNonRenderingController.Count.Should().Be(1);
         }
-
 
         [Test]
         public void ShouldNotHaveExceptionOnClazzNotFound()
@@ -190,7 +189,6 @@
                 try
                 {
                     rez = injector.Resolve(klazz);
-
                 }
                 catch (Exception)
                 {

@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot
+namespace Base2art.Soufflot
 {
     using System.Collections;
     using System.ComponentModel;
@@ -86,9 +86,7 @@
                 result = result.Replace(m.ToString(), replacement);  //attributeRegex.Replace(result, replacement, 1);
             }
             return result;
-
         }
-
 
         /// <summary>
         /// Creates a HashTable based on current object state.

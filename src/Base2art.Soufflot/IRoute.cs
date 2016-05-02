@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot
+namespace Base2art.Soufflot
 {
     public interface IRoute
     {

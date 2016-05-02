@@ -1,9 +1,8 @@
-﻿
 namespace Base2art.Soufflot.Http.Util
 {
     using System;
-	using Base2art.Soufflot.Http.Util;
-	using FluentAssertions;
+    using Base2art.Soufflot.Http.Util;
+    using FluentAssertions;
     using NUnit.Framework;
 
     [TestFixtureAttribute]
@@ -19,7 +18,6 @@ namespace Base2art.Soufflot.Http.Util
             
             mapping.GetMimeMapping("Abc").Should().Be("application/octet-stream");
             mapping.GetMimeMapping("scott/youngblut").Should().Be("application/octet-stream");
-            
             
             mapping.GetMimeMapping("Abc.jpg").Should().Be("image/jpeg");
             mapping.GetMimeMapping("scott/youngblut.html").Should().Be("text/html");

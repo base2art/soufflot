@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.CommandRunner.Config
+namespace Base2art.Soufflot.CommandRunner.Config
 {
     using Base2art.Soufflot.Api.Config;
     using Base2art.Soufflot.Api.Diagnostics;

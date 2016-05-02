@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Http.Owin
+namespace Base2art.Soufflot.Http.Owin
 {
     using Base2art.Collections;
 
@@ -19,11 +19,11 @@
             this.groupNames = groupNames.AsReadOnlyArrayList();
         }
 
-		public static string NullUserName
-		{
-		    get { return string.Empty; }
-		}
-		
+        public static string NullUserName
+        {
+            get { return string.Empty; }
+        }
+        
         public bool IsAuthenticated
         {
             get

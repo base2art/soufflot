@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.CommandRunner
+namespace Base2art.Soufflot.CommandRunner
 {
     using System;
     using System.ComponentModel;

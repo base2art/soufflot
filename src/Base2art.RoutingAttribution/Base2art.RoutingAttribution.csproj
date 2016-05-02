@@ -67,6 +67,7 @@
     <Compile Include="Parameters\PartMapAttribute.cs" />
     <Compile Include="Parameters\PathAttribute.cs" />
     <Compile Include="Parameters\QueryAttribute.cs" />
+    <Compile Include="Parameters\QueryMapAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,3 @@
-﻿
-
 namespace Base2art.Soufflot.CommandRunner.Tasks
 {
     using System;
@@ -71,7 +69,6 @@ namespace Base2art.Soufflot.CommandRunner.Tasks
                     return -2;
                 }
             }
-            
             
             using (var executor = new SoufflotExecutor(directory, settings, new ConsoleMessenger(), opts.Port))
             {

@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Http
+namespace Base2art.Soufflot.Http
 {
     using System;
     using System.IO;
@@ -241,7 +241,6 @@
             
             public Person[] Passengers { get; set; }
         }
-        
         
         private class HeaderCollection : MultiMap<string,string>, IHttpReadOnlyHeaderCollection
         {

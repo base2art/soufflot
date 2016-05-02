@@ -1,20 +1,10 @@
-﻿
 namespace Base2art.RoutingAttribution
 {
-	using System;
+    using System;
 
-	[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
-	public class HEADAttribute : Attribute
-	{
-		string Path
-		{
-			get;
-			set;
-		}
-	}
-
-	
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+    public class HEADAttribute : Attribute
+    {
+        public string Path { get; set; }
+    }
 }
-
-
-

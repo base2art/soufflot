@@ -1,7 +1,7 @@
-﻿namespace Base2art.Soufflot.Api
+namespace Base2art.Soufflot.Api
 {
     
-	using Base2art.Soufflot.Api.Diagnostics;
+    using Base2art.Soufflot.Api.Diagnostics;
 
     using Base2art.Soufflot.Http;
 

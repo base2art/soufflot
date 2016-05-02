@@ -1,4 +1,3 @@
-﻿
 namespace Base2art.Soufflot.CommandRunner.Tasks
 {
     using System;
@@ -25,7 +24,6 @@ namespace Base2art.Soufflot.CommandRunner.Tasks
             }
             
             XDocument configDoc = XDocument.Load(nuGetConfig);
-            
             
             var packageSources = configDoc.Root
                 .Elements("packageSources")
@@ -59,12 +57,8 @@ namespace Base2art.Soufflot.CommandRunner.Tasks
 
 /*
  
-
 function update-Nuget-config() {
   
-  
-  
-
   $addEl = $packageSource.selectSingleNode("add[@key='Base2Art']")
   
   if ($addEl -eq $null) {
@@ -73,7 +67,6 @@ function update-Nuget-config() {
     $addEl.SetAttribute("value", $nugetRepoLocalDir)
     $packageSource.appendChild($addEl)
   }
-
 
   $addEl = $packageSource.selectSingleNode("add[@key='nuget.org']")
   
@@ -84,12 +77,9 @@ function update-Nuget-config() {
     $packageSource.appendChild($addEl)
   }
   
-
   $configDoc.Save($nuGetConfig)
   return $null
 }
-
-
 
   $nugetRepoLocalDir = "$Home\nugetserver\Packages"
   if (-Not (Test-Path $nugetRepoLocalDir) ) {

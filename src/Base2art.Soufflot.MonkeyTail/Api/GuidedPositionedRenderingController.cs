@@ -1,4 +1,4 @@
-﻿// <copyright company="Base2art">
+// <copyright company="Base2art">
 // Copyright (c) 2014 All Rights Reserved
 // </copyright>
 // <author>Scott Youngblut</author>
@@ -7,13 +7,13 @@ namespace Base2art.MonkeyTail.Api
 {
     using System;
     using Base2art.Soufflot.Mvc;
-	using Base2art.Validation;
+    using Base2art.Validation;
     
     public class GuidedPositionedRenderingController<TGuidepost> : IPositionedRenderingController 
         where TGuidepost : IValueContainerOut<int>, IComparable<TGuidepost>, new()
     {
         private TGuidepost guidepost;
-		
+        
         public GuidedPositionedRenderingController() : this(default(TGuidepost), new NullRenderingController(), 0)
         {
         }
@@ -35,7 +35,7 @@ namespace Base2art.MonkeyTail.Api
             {
                 // disable once CompareNonConstrainedGenericWithNull
                 return this.guidepost == null || this.guidepost.CompareTo(default(TGuidepost)) == 0 
-			        ? new TGuidepost()
+                    ? new TGuidepost()
                     : this.guidepost;
             }
             
@@ -55,7 +55,3 @@ namespace Base2art.MonkeyTail.Api
         public int ContainerPriority { get; set; }
     }
 }
-
-
-
-

@@ -1,4 +1,3 @@
-﻿
 namespace Base2art.Soufflot.Http
 {
     using System;
@@ -104,7 +103,6 @@ namespace Base2art.Soufflot.Http
             return serializer.Deserialize<T>(serVal);
         }
 
-
         private static void Fill(IDictionary<string, object> obj, string key, IEnumerable<string> values)
         {
             var items = key.Split(new []{'.'}, System.StringSplitOptions.RemoveEmptyEntries);
@@ -155,4 +153,3 @@ namespace Base2art.Soufflot.Http
         }
     }
 }
-

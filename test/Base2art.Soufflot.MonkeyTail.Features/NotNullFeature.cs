@@ -1,4 +1,3 @@
-﻿
 namespace Base2art.Soufflot.Pack.Features
 {
     using System;
@@ -30,5 +29,3 @@ namespace Base2art.Soufflot.Pack.Features
 //        }
     }
 }
-
-

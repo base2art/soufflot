@@ -1,20 +1,10 @@
-﻿
 namespace Base2art.RoutingAttribution
 {
-	using System;
+    using System;
 
-	[AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
-	public class PartMapAttribute : Attribute
-	{
-		ContentTransferEncoding Encoding
-		{
-			get;
-			set;
-		}
-	}
+    [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
+    public class PartMapAttribute : Attribute
+    {
+        public ContentTransferEncoding Encoding { get; set; }
+    }
 }
-
-
-
-
-

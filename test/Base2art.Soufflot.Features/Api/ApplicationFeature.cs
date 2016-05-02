@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api
+namespace Base2art.Soufflot.Api
 {
     using System;
     using System.Collections.Generic;
@@ -9,7 +9,7 @@
 
     using FluentAssertions;
 
-	using NUnit.Framework;
+    using NUnit.Framework;
 
     [TestFixture]
     public class ApplicationFeature : IConfigurationProvider

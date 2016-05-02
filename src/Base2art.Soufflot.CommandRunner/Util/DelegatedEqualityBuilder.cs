@@ -1,4 +1,3 @@
-﻿
 namespace Base2art.Soufflot.CommandRunner.Util
 {
     using System;
@@ -11,7 +10,6 @@ namespace Base2art.Soufflot.CommandRunner.Util
         {
             return new InternalComparer<TProp>(getter);
         }
-		
         
         private class InternalComparer<TProp> : IEqualityComparer<T>
             where TProp : IEquatable<TProp>
@@ -37,5 +35,3 @@ namespace Base2art.Soufflot.CommandRunner.Util
         }
     }
 }
-
-

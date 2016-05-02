@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Mvc
+namespace Base2art.Soufflot.Mvc
 {
     using Base2art.Soufflot.Api;
     
@@ -19,6 +19,4 @@
             get { return new INonRenderingRouted[0]; }
         }
     }
-    
-    
 }

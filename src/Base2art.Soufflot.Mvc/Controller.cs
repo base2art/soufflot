@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Mvc
+namespace Base2art.Soufflot.Mvc
 {
     using System;
     using System.Collections.Generic;
@@ -57,7 +57,7 @@
             {
                 this.childRoutedAction = childRoutedAction;
             }
-			
+            
             protected override void ExecuteMain(IHttpContext httpContext)
             {
                 if (this.childRoutedAction != null)

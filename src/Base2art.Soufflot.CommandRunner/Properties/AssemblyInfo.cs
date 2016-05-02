@@ -1,4 +1,4 @@
-﻿// <copyright company="Base2art">
+// <copyright company="Base2art">
 // Copyright (c) 2014 All Rights Reserved
 // </copyright>
 // <author>Scott Youngblut</author>

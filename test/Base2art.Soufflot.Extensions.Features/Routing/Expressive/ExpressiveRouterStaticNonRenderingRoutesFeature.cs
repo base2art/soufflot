@@ -8,7 +8,7 @@ namespace Base2art.Soufflot.Routing.Expressive
     using FluentAssertions;
 
     using NUnit.Framework;
-	using Base2art.Soufflot.Fixtures;
+    using Base2art.Soufflot.Fixtures;
 
     [TestFixture]
     public class ExpressiveRouterStaticNonRenderingRoutesFeature : ExpressiveRouterBaseFeature

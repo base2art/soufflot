@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api.Routing
+namespace Base2art.Soufflot.Api.Routing
 {
     using System;
     using System.Collections.Generic;

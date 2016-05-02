@@ -1,9 +1,7 @@
-﻿namespace Base2art.Soufflot.Api.Diagnostics
+namespace Base2art.Soufflot.Api.Diagnostics
 {
-	public interface IRequestLoggerFactory
-	{
-		ILogger Create(LogLevel logLevel);
-	}
+    public interface IRequestLoggerFactory
+    {
+        ILogger Create(LogLevel logLevel);
+    }
 }
-
-

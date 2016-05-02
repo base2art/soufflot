@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Mvc.Routing
+namespace Base2art.Soufflot.Mvc.Routing
 {
     public class MvcRouter
     {

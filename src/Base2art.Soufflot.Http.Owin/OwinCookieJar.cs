@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Http.Owin
+namespace Base2art.Soufflot.Http.Owin
 {
     using System;
     using System.Collections.Generic;
@@ -40,5 +40,3 @@
         #endregion
     }
 }
-
-

@@ -1,26 +1,12 @@
-﻿
 namespace Base2art.RoutingAttribution
 {
-	using System;
+    using System;
 
-	[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
-	public class HTTPAttribute : Attribute
-	{
-		string Method
-		{
-			get;
-			set;
-		}
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+    public class HTTPAttribute : Attribute
+    {
+        public string Method { get; set; }
 
-		string Path
-		{
-			get;
-			set;
-		}
-	}
+        public string Path { get; set; }
+    }
 }
-
-
-
-
-

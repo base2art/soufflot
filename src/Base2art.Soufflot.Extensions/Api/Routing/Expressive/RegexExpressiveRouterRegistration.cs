@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api.Routing.Expressive
+namespace Base2art.Soufflot.Api.Routing.Expressive
 {
     using System;
     using System.Collections.Generic;
@@ -86,7 +86,6 @@
             return i;
         }
     }
-
 
     public class RegexExpressiveRouterRegistration<T> : RegexExpressiveRouterRegistration
             where T : IRenderingRouted

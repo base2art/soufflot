@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api.Routing.Expressive
+namespace Base2art.Soufflot.Api.Routing.Expressive
 {
     using System.Text.RegularExpressions;
 
@@ -20,7 +20,6 @@
     }
 }
 
-
 //        void RegisterRoute<T>(
 //            HttpMethod? method,
 //            string hostName,
@@ -41,8 +40,6 @@
 //            Expression<Func<T, IHttpContext, List<PositionedResult>, TInput, IResult>> func)
         //            where T : IRenderingController;
 
-
-
 //        void RegisterRoute<T>(
 //            HttpMethod? method,
 //            string hostName,
@@ -59,7 +56,6 @@
 //            string path,
 //            Expression<Func<T, IHttpContext, List<PositionedResult>, IResult>> func)
 //            where T : IRenderingController;
-
 
 //        IRoute FindRoute<T>(Expression<Func<T, IHttpContext, List<PositionedResult>, IResult>> func)
 //            where T : IRenderingController;

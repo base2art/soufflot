@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Pack.Features.Fixtures
+namespace Base2art.Soufflot.Pack.Features.Fixtures
 {
     using System.Collections.Generic;
     using System.Text;

@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Http
+namespace Base2art.Soufflot.Http
 {
     using Base2art.Soufflot.Api;
     using Base2art.Soufflot.Api.Diagnostics;

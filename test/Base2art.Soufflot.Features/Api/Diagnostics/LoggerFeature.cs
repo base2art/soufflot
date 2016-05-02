@@ -1,7 +1,7 @@
-﻿namespace Base2art.Soufflot.Api.Diagnostics
+namespace Base2art.Soufflot.Api.Diagnostics
 {
     using System.IO;
-	using System.Linq;
+    using System.Linq;
     using Base2art.Soufflot.Api.Diagnostics;
 
     using FluentAssertions;
@@ -84,7 +84,6 @@
             this.par = new StringWriter();
             System.Console.SetOut(par);
             return new ConsoleLoggerFactory().Create(level);
-            
         }
     }
 }

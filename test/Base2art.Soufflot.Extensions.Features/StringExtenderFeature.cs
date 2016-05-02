@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot
+namespace Base2art.Soufflot
 {
     using System;
     using System.Collections;
@@ -13,7 +13,6 @@
             public string foo { get; set; }
             public object bar { get; set; }
         }
-
 
         /// <summary>
         /// Tests for sunny day with a single string property
@@ -110,7 +109,6 @@
             Assert.AreEqual(expected, formatString.Inject(o));
         }
 
-
         /// <summary>
         /// Tests for null values in the properties
         ///</summary>
@@ -121,7 +119,6 @@
             StringInjectTestObject o = new StringInjectTestObject() { foo = "abc", bar = null };
             string expected = "This is a test: foo=abc, bar=||END";
             Assert.AreEqual(expected, formatString.Inject(o));
-
         }
 
         /// <summary>
@@ -135,7 +132,6 @@
             string expected = "This is a test: foo=01.23";
             Assert.AreEqual(expected, formatString.Inject(o));
         }
-
 
         /// <summary>
         /// Tests for custom date formats
@@ -194,7 +190,6 @@ Your HOA Board";
         //todo: more date formats
         //todo: more numeric formats
 
-
         /// <summary>
         /// Tests for Hashtable input
         ///</summary>
@@ -226,4 +221,3 @@ Your HOA Board";
         }
     }
 }
-

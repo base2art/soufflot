@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.CommandRunner.Tasks
+namespace Base2art.Soufflot.CommandRunner.Tasks
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -6,7 +6,7 @@
     using Base2art.MonkeyTail.Config;
     using CommandLine;
     
-	[Verb("run", HelpText = "Run a project")]
+    [Verb("run", HelpText = "Run a project")]
     public class RunOptions : IViewsSettings
     {
         // Omitting long name, default --verbose

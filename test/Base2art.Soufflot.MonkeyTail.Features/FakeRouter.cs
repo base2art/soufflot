@@ -1,5 +1,3 @@
-﻿
-
 namespace Base2art.Soufflot.Pack.Features
 {
     using System.Collections.Generic;

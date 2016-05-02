@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Http.Owin
+namespace Base2art.Soufflot.Http.Owin
 {
     using System;
     using System.Security.Policy;
@@ -8,7 +8,7 @@
     using FluentAssertions;
 
     using NUnit.Framework;
-	using Base2art.Soufflot.Http.Owin.Fixtures;
+    using Base2art.Soufflot.Http.Owin.Fixtures;
 
     [TestFixture, Ignore("Difficult to test right now...; Justification='SjY'")]
     [Serializable]

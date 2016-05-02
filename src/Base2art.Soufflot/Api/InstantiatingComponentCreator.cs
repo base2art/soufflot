@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api
+namespace Base2art.Soufflot.Api
 {
     using System;
     using Base2art.Soufflot.Api.Diagnostics;
@@ -51,4 +51,3 @@
         }
     }
 }
-

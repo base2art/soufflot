@@ -1,4 +1,4 @@
-﻿namespace Base2art.Soufflot.Api.Routing.Expressive
+namespace Base2art.Soufflot.Api.Routing.Expressive
 {
     using Base2art.Soufflot.Mvc;
 
@@ -6,6 +6,5 @@
     {
         IRoutable<TController> For<TController>()
             where TController : IRenderingRouted;
-
     }
 }

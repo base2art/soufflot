@@ -1,4 +1,3 @@
-﻿
 namespace Base2art.RoutingAttribution
 {
     using System;
@@ -6,8 +5,6 @@ namespace Base2art.RoutingAttribution
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
     public class DELETEAttribute : Attribute
     {
-        string Path { get; set; }
+        public string Path { get; set; }
     }
-    
-    
 }

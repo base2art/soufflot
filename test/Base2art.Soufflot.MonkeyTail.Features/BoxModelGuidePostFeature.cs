@@ -1,9 +1,8 @@
-﻿
 namespace Base2art.Soufflot.Pack.Features
 {
     using System;
-	using Base2art.MonkeyTail.Api;
-	using FluentAssertions;
+    using Base2art.MonkeyTail.Api;
+    using FluentAssertions;
     using NUnit.Framework;
 
     [TestFixture]
@@ -17,7 +16,6 @@ namespace Base2art.Soufflot.Pack.Features
             BoxModelGuidePost.Center.CompareTo(BoxModelGuidePost.Center).Should().Be(0);
             BoxModelGuidePost.Right.CompareTo(BoxModelGuidePost.Left).Should().Be(1);
             BoxModelGuidePost.Left.CompareTo(BoxModelGuidePost.Right).Should().Be(-1);
-            
             
             BoxModelGuidePost.Values[0].Value.Should().Be(0);
         }
