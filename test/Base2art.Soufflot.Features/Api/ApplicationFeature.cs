@@ -86,12 +86,12 @@
 
         private class CustomRouter : IRouter
         {
-            public IRouteData<IRenderingController> FindRenderingControllerType(IHttpRequest request)
+            public IRouteData<IRenderingRouted> FindRenderingControllerType(IHttpRequest request)
             {
                 throw new NotImplementedException();
             }
 
-            public IEnumerable<IRouteData<INonRenderingController>> FindNonRenderingControllerTypes(IHttpRequest request)
+            public IEnumerable<IRouteData<INonRenderingRouted>> FindNonRenderingControllerTypes(IHttpRequest request)
             {
                 throw new NotImplementedException();
             }

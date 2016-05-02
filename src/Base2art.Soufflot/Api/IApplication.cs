@@ -2,7 +2,6 @@
 {
     
 	using Base2art.Soufflot.Api.Diagnostics;
-    using Base2art.Soufflot.Mvc;
 
     using Base2art.Soufflot.Http;
 
@@ -18,7 +17,7 @@
         T[] CreateInstances<T>(IClass<T> createInstanceClass, bool returnNullOnErrorOrNotFound)
                 where T : class;
 
-        IResult OnControllerNotFound(IHttpContext httpContext);
+        IResult OnRouteNotFound(IHttpContext httpContext);
 
         IRouter CreateRouter();
 

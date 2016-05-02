@@ -4,14 +4,14 @@ namespace Base2art.Soufflot.Api.Fixtures
 
     using Base2art.Soufflot.Http;
 
-    public class CountingNonRenderingController : INonRenderingController
+    public class CountingNonRenderingController : INonRenderingRouted
     {
         public static int Count = 0;
-        public INonRenderingController[] NonRenderingControllers
+        public INonRenderingRouted[] NonRenderingControllers
         {
             get
             {
-                return new INonRenderingController[] { new SubCountingNonRenderingController() };
+                return new INonRenderingRouted[] { new SubCountingNonRenderingController() };
             }
         }
 

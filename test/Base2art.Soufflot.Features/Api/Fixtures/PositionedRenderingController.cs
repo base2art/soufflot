@@ -2,9 +2,9 @@
 {
     using Base2art.Soufflot.Mvc;
 
-    public class PositionedRenderingController : IPositionedRenderingController
+    public class PositionedRenderingController : IPositionedRenderingRouted
     {
-        public IRenderingController RenderingController { get; set; }
+        public IRenderingRouted RenderingController { get; set; }
 
         public int Container { get; set; }
 

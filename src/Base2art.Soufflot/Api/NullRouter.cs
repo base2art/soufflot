@@ -3,16 +3,15 @@
     using System.Collections.Generic;
 
     using Base2art.Soufflot.Http;
-    using Base2art.Soufflot.Mvc;
 
     public sealed class NullRouter : IRouter
     {
-        public IRouteData<IRenderingController> FindRenderingControllerType(IHttpRequest request)
+        public IRouteData<IRenderingRouted> FindRenderingRoutedType(IHttpRequest request)
         {
             return null;
         }
 
-        public IEnumerable<IRouteData<INonRenderingController>> FindNonRenderingControllerTypes(IHttpRequest request)
+        public IEnumerable<IRouteData<INonRenderingRouted>> FindNonRenderingRoutedTypes(IHttpRequest request)
         {
             return null;
         }

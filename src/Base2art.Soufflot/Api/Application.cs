@@ -4,7 +4,6 @@
 
     using Base2art.Soufflot.Api.Config;
     using Base2art.Soufflot.Api.Diagnostics;
-    using Base2art.Soufflot.Mvc;
     using Base2art.Validation;
 
     using Base2art.Soufflot.Http;
@@ -92,10 +91,10 @@
             return this.CreateItemInstances(type, returnNullOnErrorOrNotFound);
         }
 
-        IResult IApplication.OnControllerNotFound(IHttpContext httpContext)
+        IResult IApplication.OnRouteNotFound(IHttpContext httpContext)
         {
             this.EnsureStartup();
-            return this.OnControllerNotFound(httpContext);
+            return this.OnRouteNotFound(httpContext);
         }
 
         IRouter IApplication.CreateRouter()
@@ -119,7 +118,7 @@
             return this.configuration.GetValue(key);
         }
 
-        protected virtual IResult OnControllerNotFound(IHttpContext httpContext)
+        protected virtual IResult OnRouteNotFound(IHttpContext httpContext)
         {
             return new SimpleResult {
                 Content = new SimpleContent {

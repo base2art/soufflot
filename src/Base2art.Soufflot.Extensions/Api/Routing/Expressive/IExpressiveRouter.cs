@@ -12,7 +12,7 @@
             HttpMethod? method,
             string hostName,
             string path)
-            where T : INonRenderingController;
+            where T : INonRenderingRouted;
 
         StringExpressiveRouterRegistration Register(string path);
 

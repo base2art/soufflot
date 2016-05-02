@@ -9,21 +9,21 @@ namespace Base2art.Soufflot.Api.Fixtures
     using Base2art.Soufflot.Http;
     using Base2art.Soufflot.Mvc;
 
-    public class ControllerThrowsException:IRenderingController
+    public class ControllerThrowsException:IRenderingRouted
     {
-        public IPositionedRenderingController[] RenderingControllers
+        public IPositionedRenderingRouted[] RenderingControllers
         {
             get
             {
-                return new IPositionedRenderingController[0];
+                return new IPositionedRenderingRouted[0];
             }
         }
 
-        public INonRenderingController[] NonRenderingControllers
+        public INonRenderingRouted[] NonRenderingControllers
         {
             get
             {
-                return new INonRenderingController[0];
+                return new INonRenderingRouted[0];
             }
         }
 

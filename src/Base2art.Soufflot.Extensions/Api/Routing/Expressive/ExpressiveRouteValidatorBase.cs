@@ -11,7 +11,7 @@ namespace Base2art.Soufflot.Api.Routing.Expressive
     using Base2art.Validation;
 
     public abstract class ExpressiveRouteValidatorBase<TController>
-        where TController : IRenderingController
+        where TController : IRenderingRouted
     {
 
         protected RouteExpressionTree VerifyNonFunctionalExpression(

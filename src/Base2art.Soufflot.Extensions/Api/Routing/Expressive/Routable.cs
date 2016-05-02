@@ -9,7 +9,7 @@
     using Base2art.Soufflot.Mvc;
 
     public class Routable<T> : IRoutable<T>
-        where T : IRenderingController
+        where T : IRenderingRouted
     {
         private const string ExecutionMethod = "Execute";
 

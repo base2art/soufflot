@@ -9,7 +9,7 @@ namespace Base2art.Soufflot.Mvc
     using Base2art.Soufflot.Http;
     using Base2art.Soufflot.Http.Util;
 
-    public class AssetsController : IRenderingController
+    public class AssetsController : IRenderingRouted
     {
         IMimeMapping mapper;
 
@@ -23,18 +23,18 @@ namespace Base2art.Soufflot.Mvc
             this.mapper = mimeMapper ?? new MimeMapping();
         }
         
-        private readonly IPositionedRenderingController[] positionedRenderingControllers = new IPositionedRenderingController[0];
+        private readonly IPositionedRenderingRouted[] positionedRenderingRoutedItems = new IPositionedRenderingRouted[0];
 
-        private readonly INonRenderingController[] nonRenderingControllers = new INonRenderingController[0];
+        private readonly INonRenderingRouted[] nonRenderingRoutedItems = new INonRenderingRouted[0];
 
-        public IPositionedRenderingController[] RenderingControllers
+        public IPositionedRenderingRouted[] RenderingRoutedItems
         {
-            get { return this.positionedRenderingControllers; }
+            get { return this.positionedRenderingRoutedItems; }
         }
 
-        public INonRenderingController[] NonRenderingControllers
+        public INonRenderingRouted[] NonRenderingRoutedItems
         {
-            get { return this.nonRenderingControllers; }
+            get { return this.nonRenderingRoutedItems; }
         }
 
         public IResult Execute(IHttpContext httpContext, List<PositionedResult> childResults)

@@ -5,7 +5,7 @@
     public interface IExpressiveReverseRouter
     {
         IRoutable<TController> For<TController>()
-            where TController : IRenderingController;
+            where TController : IRenderingRouted;
 
     }
 }

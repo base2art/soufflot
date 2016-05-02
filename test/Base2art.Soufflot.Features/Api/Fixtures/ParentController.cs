@@ -9,13 +9,13 @@
 
     using Base2art.Soufflot.Http;
 
-    public class ParentController : IRenderingController
+    public class ParentController : IRenderingRouted
     {
-        public IPositionedRenderingController[] RenderingControllers
+        public IPositionedRenderingRouted[] RenderingControllers
         {
             get
             {
-                return new IPositionedRenderingController[]
+                return new IPositionedRenderingRouted[]
                        {
                            new PositionedRenderingController
                            {
@@ -27,11 +27,11 @@
             }
         }
 
-        public INonRenderingController[] NonRenderingControllers
+        public INonRenderingRouted[] NonRenderingControllers
         {
             get
             {
-                return new INonRenderingController[0];
+                return new INonRenderingRouted[0];
             }
         }
 

@@ -11,11 +11,11 @@
     {
         private readonly IClass<T> controllerClass;
 
-        private readonly Expression<Func<IRenderingController, IHttpContext, List<PositionedResult>, IResult>> expression;
+        private readonly Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>> expression;
 
         public RouteData(
             IClass<T> controllerClass, 
-            Expression<Func<IRenderingController, IHttpContext, List<PositionedResult>, IResult>> expression)
+            Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>> expression)
         {
             this.controllerClass = controllerClass;
             this.expression = expression;
@@ -37,7 +37,7 @@
             }
         }
 
-        public Expression<Func<IRenderingController, IHttpContext, List<PositionedResult>, IResult>> Expression
+        public Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>> Expression
         {
             get
             {

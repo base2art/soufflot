@@ -8,7 +8,7 @@ namespace Base2art.Soufflot.Api.Routing.Expressive
     using Base2art.Soufflot.Mvc;
 
     public class ExpressiveRouteValidator<TController> : ExpressiveRouteValidatorBase<TController>
-        where TController : IRenderingController
+        where TController : IRenderingRouted
     {
         public RouteExpressionTree ValidateExpression(
             Expression<Func<TController, IHttpContext, List<PositionedResult>, IResult>> func)

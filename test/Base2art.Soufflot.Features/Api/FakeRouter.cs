@@ -10,37 +10,37 @@
 
     public class FakeRouter
     {
-        public static IRouter Create(IClass<IRenderingController> klazz, params IClass<INonRenderingController>[] otherKlazzez)
+        public static IRouter Create(IClass<IRenderingRouted> klazz, params IClass<INonRenderingRouted>[] otherKlazzez)
         {
             return new TempRouter(klazz, otherKlazzez.Coalesce());
         }
 
-        public static IRouter CreateData(IRouteData<IRenderingController> routeData)
+        public static IRouter CreateData(IRouteData<IRenderingRouted> routeData)
         {
             return new TempRouter(routeData);
         }
 
         private class TempRouter : IRouter
         {
-            private readonly IRouteData<IRenderingController> routeData;
+            private readonly IRouteData<IRenderingRouted> routeData;
 
-            private readonly IClass<IRenderingController> klazz;
+            private readonly IClass<IRenderingRouted> klazz;
 
-            private readonly IEnumerable<IClass<INonRenderingController>> otherKlazzez;
+            private readonly IEnumerable<IClass<INonRenderingRouted>> otherKlazzez;
 
-            public TempRouter(IRouteData<IRenderingController> routeData)
+            public TempRouter(IRouteData<IRenderingRouted> routeData)
             {
                 this.routeData = routeData;
-                this.otherKlazzez = new IClass<INonRenderingController>[0];
+                this.otherKlazzez = new IClass<INonRenderingRouted>[0];
             }
 
-            public TempRouter(IClass<IRenderingController> klazz, IEnumerable<IClass<INonRenderingController>> otherKlazzez)
+            public TempRouter(IClass<IRenderingRouted> klazz, IEnumerable<IClass<INonRenderingRouted>> otherKlazzez)
             {
                 this.klazz = klazz;
                 this.otherKlazzez = otherKlazzez;
             }
 
-            public IRouteData<IRenderingController> FindRenderingControllerType(IHttpRequest request)
+            public IRouteData<IRenderingRouted> FindRenderingControllerType(IHttpRequest request)
             {
                 if (this.routeData != null)
                 {
@@ -54,15 +54,15 @@
 
                 if (this.klazz.Type == typeof(INotPossibleController))
                 {
-                    return new FakeRouteData<IRenderingController>(null);
+                    return new FakeRouteData<IRenderingRouted>(null);
                 }
 
-                return new FakeRouteData<IRenderingController>(this.klazz);
+                return new FakeRouteData<IRenderingRouted>(this.klazz);
             }
 
-            public IEnumerable<IRouteData<INonRenderingController>> FindNonRenderingControllerTypes(IHttpRequest request)
+            public IEnumerable<IRouteData<INonRenderingRouted>> FindNonRenderingControllerTypes(IHttpRequest request)
             {
-                return this.otherKlazzez.Select(x => new FakeRouteData<INonRenderingController>(x));
+                return this.otherKlazzez.Select(x => new FakeRouteData<INonRenderingRouted>(x));
             }
         }
     }

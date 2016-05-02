@@ -56,7 +56,7 @@
         }
 
         public void ToController<T>()
-            where T : IRenderingController
+            where T : IRenderingRouted
         {
             var routeData = new RouteInfo
             {
@@ -76,7 +76,7 @@
         }
 
         public StringExpressiveRouterRegistration<T> To<T>()
-            where T : IRenderingController
+            where T : IRenderingRouted
         {
             var i = new StringExpressiveRouterRegistration<T>(this.router, this.Path);
             i.httpMethod = this.httpMethod;
@@ -85,14 +85,14 @@
         }
 
         protected Expression<Func<T, IHttpContext, List<PositionedResult>, IResult>> Create<T>(Expression<Func<T, IHttpContext, List<PositionedResult>, IResult>> func)
-            where T : IRenderingController
+            where T : IRenderingRouted
         {
             return func;
         }
     }
 
     public class StringExpressiveRouterRegistration<T> : StringExpressiveRouterRegistration
-            where T : IRenderingController
+            where T : IRenderingRouted
     {
         public StringExpressiveRouterRegistration(ExpressiveRouter router, string path)
             : base(router, path)

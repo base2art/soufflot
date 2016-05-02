@@ -9,7 +9,7 @@
 
     public class ExpressiveRouteData<T> : RouteData<T>
     {
-        public ExpressiveRouteData(IClass<T> controllerClass, Expression<Func<IRenderingController, IHttpContext, List<PositionedResult>, IResult>> expression)
+        public ExpressiveRouteData(IClass<T> controllerClass, Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>> expression)
             : base(controllerClass, expression)
         {
         }

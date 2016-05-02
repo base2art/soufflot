@@ -10,7 +10,7 @@ namespace Base2art.Soufflot.Api.Routing.Expressive
     using Base2art.Soufflot.Mvc;
 
     public class ExpressiveRouteValidator1<TController> : ExpressiveRouteValidatorBase<TController>
-        where TController : IRenderingController
+        where TController : IRenderingRouted
     {
         private readonly Regex targetedParams;
 
@@ -73,7 +73,7 @@ namespace Base2art.Soufflot.Api.Routing.Expressive
     }
 
     public class ExpressiveReverseRouteValidator1<TController> : ExpressiveRouteValidatorBase<TController>
-        where TController : IRenderingController
+        where TController : IRenderingRouted
     {
         public ExpressiveReverseRouteValidator1()
         {

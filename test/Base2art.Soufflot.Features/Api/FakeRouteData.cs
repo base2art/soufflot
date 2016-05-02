@@ -12,14 +12,14 @@
     {
         private readonly IClass<T> klazz;
 
-        private readonly Expression<Func<IRenderingController, IHttpContext, List<PositionedResult>, IResult>> expr;
+        private readonly Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>> expr;
 
         public FakeRouteData(IClass<T> klazz)
             : this(klazz, null)
         {
         }
 
-        public FakeRouteData(IClass<T> klazz, Expression<Func<IRenderingController, IHttpContext, List<PositionedResult>, IResult>> expr)
+        public FakeRouteData(IClass<T> klazz, Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>> expr)
         {
             this.klazz = klazz;
             this.expr = expr;
@@ -41,7 +41,7 @@
             }
         }
 
-        public Expression<Func<IRenderingController, IHttpContext, List<PositionedResult>, IResult>> Expression
+        public Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>> Expression
         {
             get
             {

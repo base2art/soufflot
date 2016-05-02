@@ -74,7 +74,7 @@
         }
 
         public RegexExpressiveRouterRegistration<T> To<T>()
-            where T : IRenderingController
+            where T : IRenderingRouted
         {
             var i = new RegexExpressiveRouterRegistration<T>(
                 this.router,
@@ -89,7 +89,7 @@
 
 
     public class RegexExpressiveRouterRegistration<T> : RegexExpressiveRouterRegistration
-            where T : IRenderingController
+            where T : IRenderingRouted
     {
         private readonly IDictionary<Type, IObjectParserBase> parsers;
 

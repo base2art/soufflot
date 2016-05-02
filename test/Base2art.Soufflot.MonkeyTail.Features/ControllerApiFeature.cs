@@ -15,7 +15,7 @@ namespace Base2art.Soufflot.Pack.Features
             return httpContext.NoContent();
         }
         
-        protected override IEnumerable<IPositionedRenderingController> RenderingControllers
+        protected override IEnumerable<IPositionedRenderingRouted> RenderingControllers
         {
             get
             {
@@ -24,7 +24,7 @@ namespace Base2art.Soufflot.Pack.Features
             }
         }
         
-        protected override IEnumerable<INonRenderingController> NonRenderingControllers
+        protected override IEnumerable<INonRenderingRouted> NonRenderingControllers
         {
             get
             {

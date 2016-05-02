@@ -40,6 +40,10 @@ namespace Base2art.Soufflot.CommandRunner.Tasks
                 .Distinct(DelegatedEqualityComparer.Builder<Reference>().Build(x=> x.Name))
                 .ToArray();
             
+            newViewSettings.OutputFormats = optsSettings.OutputFormats
+                .Union(settings.OutputFormats)
+                .Select(x => new FileType { Name = x.Name, SearchPattern = x.SearchPattern })
+                .ToArray();
             
             newViewSettings.LinkerPath = Fold(opts, settings, x => x.LinkerPath);
             newViewSettings.OutputFile = Fold(opts, settings, x => x.OutputFile);
@@ -48,17 +52,17 @@ namespace Base2art.Soufflot.CommandRunner.Tasks
             newViewSettings.SecondaryOutputFile = Fold(opts, settings, x => x.SecondaryOutputFile);
             newViewSettings.SkipSecondaryOutputFile = opts.SkipSecondaryOutputFile || settings.SkipSecondaryOutputFile;
             
-            
             if (opts.SingleRun)
             {
                 var logFile = new StreamWriter(File.OpenWrite(Path.Combine(directory, "Logs", DateTime.Now.ToString("dd-MM-yyyy-hh-mm-ss"))));
-            
+                
                 var logger = opts.Verbose
-                        ? (ILogger)new TextWriterLogger(Console.Out)
-                        : new NullLogger();
-            
-                using (var compiler = CompilerRunner.StartWatching(directory, settings, new ConsoleMessenger(), logger))
+                    ? (ILogger)new TextWriterLogger(Console.Out)
+                    : new NullLogger();
+                
+                using (var compiler = CompilerRunner.StartWatching(directory, newViewSettings, new ConsoleMessenger(), logger))
                 {
+                    compiler.CompileStarting += (s, e) => {};
                     if (compiler.Compile() == CompileResult.Success)
                     {
                         return -1;

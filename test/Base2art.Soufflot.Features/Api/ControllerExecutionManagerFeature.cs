@@ -22,18 +22,18 @@
         [Test]
         public void ShouldFindControllerActivateAndExecuteIt()
         {
-            var router = FakeRouter.Create(typeof(CustomController).GetClass().As<IRenderingController>());
-            var a = new ControllerExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
-            IResult rezult = a.ExecuteController(this.CreateContext(a.Application));
+            var router = FakeRouter.Create(typeof(CustomController).GetClass().As<IRenderingRouted>());
+            var a = new RoutedExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
+            IResult rezult = a.ExecuteRoute(this.CreateContext(a.Application));
             rezult.Content.BodyAsString.Should().Be("Something!");
         }
 
         [Test]
         public void ShouldFindControllerActivateAndExecuteItUsingIoC()
         {
-            var router = FakeRouter.Create(typeof(ICustomController).GetClass().As<IRenderingController>());
-            var a = new ControllerExecutionManager(new CustomApplication(), router);
-            IResult rezult = a.ExecuteController(this.CreateContext(a.Application));
+            var router = FakeRouter.Create(typeof(ICustomController).GetClass().As<IRenderingRouted>());
+            var a = new RoutedExecutionManager(new CustomApplication(), router);
+            IResult rezult = a.ExecuteRoute(this.CreateContext(a.Application));
             rezult.Content.BodyAsString.Should().Be("Something!");
         }
 
@@ -44,12 +44,12 @@
             SubCountingNonRenderingController.Count = 0;
 
             var router = FakeRouter.Create(
-                typeof(CustomController).GetClass().As<IRenderingController>(),
-                typeof(CountingNonRenderingController).GetClass().As<INonRenderingController>()
+                typeof(CustomController).GetClass().As<IRenderingRouted>(),
+                typeof(CountingNonRenderingController).GetClass().As<INonRenderingRouted>()
                 );
 
-            var a = new ControllerExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
-            IResult rezult = a.ExecuteController(this.CreateContext(a.Application));
+            var a = new RoutedExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
+            IResult rezult = a.ExecuteRoute(this.CreateContext(a.Application));
             rezult.Content.BodyAsString.Should().Be("Something!");
             CountingNonRenderingController.Count.Should().Be(1);
             SubCountingNonRenderingController.Count.Should().Be(1);
@@ -59,10 +59,10 @@
         [Test]
         public void ShouldNotHaveExceptionOnClazzNotFound()
         {
-            var router = FakeRouter.Create(typeof(ICustomController).GetClass().As<IRenderingController>());
+            var router = FakeRouter.Create(typeof(ICustomController).GetClass().As<IRenderingRouted>());
 
-            var a = new ControllerExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
-            IResult rezult = a.ExecuteController(this.CreateContext(a.Application));
+            var a = new RoutedExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
+            IResult rezult = a.ExecuteRoute(this.CreateContext(a.Application));
             rezult.Content.BodyAsString.Should().Be("Page Not Found");
         }
 
@@ -71,10 +71,10 @@
         {
             CountingNonRenderingController.Count = 0;
             SubCountingNonRenderingController.Count = 0;
-            var router = FakeRouter.Create(typeof(CustomControllerWithNonRenderingChild).GetClass().As<IRenderingController>());
+            var router = FakeRouter.Create(typeof(CustomControllerWithNonRenderingChild).GetClass().As<IRenderingRouted>());
 
-            var a = new ControllerExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
-            IResult rezult = a.ExecuteController(this.CreateContext(a.Application));
+            var a = new RoutedExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
+            IResult rezult = a.ExecuteRoute(this.CreateContext(a.Application));
             rezult.Content.BodyAsString.Should().Be("Something!");
             CountingNonRenderingController.Count.Should().Be(1);
             SubCountingNonRenderingController.Count.Should().Be(1);
@@ -83,25 +83,25 @@
         [Test]
         public void ShouldExecuteControllerWithRenderingChildController()
         {
-            var router = FakeRouter.Create(typeof(ParentController).GetClass().As<IRenderingController>());
+            var router = FakeRouter.Create(typeof(ParentController).GetClass().As<IRenderingRouted>());
 
-            var a = new ControllerExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
-            IResult rezult = a.ExecuteController(this.CreateContext(a.Application));
+            var a = new RoutedExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
+            IResult rezult = a.ExecuteRoute(this.CreateContext(a.Application));
             rezult.Content.BodyAsString.Should().Be("Parent Begin->ChildController<- End");
         }
 
         [Test]
         public void ShouldExecuteControllerAndHaveLogging()
         {
-            var router = FakeRouter.Create(typeof(ParentController).GetClass().As<IRenderingController>());
+            var router = FakeRouter.Create(typeof(ParentController).GetClass().As<IRenderingRouted>());
 
             var application = new CustomApplication();
 
             var inMemoryLogger = new InMemoryLogger(LogLevels.Always);
             application.SetInstance<ILogger>(x => inMemoryLogger);
 
-            var a = new ControllerExecutionManager(application, router);
-            IResult rezult = a.ExecuteController(this.CreateContext(a.Application, inMemoryLogger));
+            var a = new RoutedExecutionManager(application, router);
+            IResult rezult = a.ExecuteRoute(this.CreateContext(a.Application, inMemoryLogger));
             rezult.Content.BodyAsString.Should().Be("Parent Begin->ChildController<- End");
             inMemoryLogger.Messages.Length.Should().BeGreaterThan(0);
         }
@@ -111,22 +111,22 @@
         {
             {
                 var klazz = Class.GetClass<CustomController>();
-                var fakeRouteData = new FakeRouteData<IRenderingController>(
+                var fakeRouteData = new FakeRouteData<IRenderingRouted>(
                     klazz,
                     (x, y, z) => ((CustomController)(x)).View(y, z, 1));
                 var router = FakeRouter.CreateData(fakeRouteData);
-                var a = new ControllerExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
-                IResult rezult = a.ExecuteController(this.CreateContext(a.Application));
+                var a = new RoutedExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
+                IResult rezult = a.ExecuteRoute(this.CreateContext(a.Application));
                 rezult.Content.BodyAsString.Should().Be("Number i: 1");
             }
             {
                 var klazz = Class.GetClass<CustomController>();
-                var fakeRouteData = new FakeRouteData<IRenderingController>(
+                var fakeRouteData = new FakeRouteData<IRenderingRouted>(
                     klazz,
                     (x, y, z) => ((CustomController)(x)).View(y, z, 2));
                 var router = FakeRouter.CreateData(fakeRouteData);
-                var a = new ControllerExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
-                IResult rezult = a.ExecuteController(this.CreateContext(a.Application));
+                var a = new RoutedExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
+                IResult rezult = a.ExecuteRoute(this.CreateContext(a.Application));
                 rezult.Content.BodyAsString.Should().Be("Number i: 2");
             }
         }
@@ -136,8 +136,8 @@
         {
             var router = FakeRouter.Create(null);
 
-            var a = new ControllerExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
-            IResult rezult = a.ExecuteController(this.CreateContext(a.Application));
+            var a = new RoutedExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
+            IResult rezult = a.ExecuteRoute(this.CreateContext(a.Application));
             rezult.Content.BodyAsString.Should().Be("Page Not Found");
         }
 
@@ -146,8 +146,8 @@
         {
             var router = FakeRouter.Create(Class.GetClass<INotPossibleController>());
 
-            var a = new ControllerExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
-            IResult rezult = a.ExecuteController(this.CreateContext(a.Application));
+            var a = new RoutedExecutionManager(new Application(ApplicationMode.Prod, Environment.CurrentDirectory, null), router);
+            IResult rezult = a.ExecuteRoute(this.CreateContext(a.Application));
             rezult.Content.BodyAsString.Should().Be("Page Not Found");
         }
 

@@ -12,7 +12,7 @@ namespace Base2art.Soufflot.Http.Owin
     {
         public static IResult ProcessRequest(
             this IOwinContext context,
-            ControllerExecutionManager manager,
+            RoutedExecutionManager manager,
             string salt,
             ILogger logger)
         {
@@ -25,7 +25,7 @@ namespace Base2art.Soufflot.Http.Owin
         
         public  static IResult ProcessRequest(
             this IOwinContext context,
-            ControllerExecutionManager manager,
+            RoutedExecutionManager manager,
             IHttpUserLookup instance,
             string salt,
             ILogger logger)
@@ -48,7 +48,7 @@ namespace Base2art.Soufflot.Http.Owin
             IResult result;
             try
             {
-                result = manager.ExecuteController(httpContext);
+                result = manager.ExecuteRoute(httpContext);
             }
             catch (Exception e)
             {

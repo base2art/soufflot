@@ -1,7 +1,6 @@
 ﻿namespace Base2art.Soufflot.Api
 {
     using Base2art.Soufflot.Http;
-    using Base2art.Soufflot.Mvc;
 
     public class ResponseResult : IResult
     {

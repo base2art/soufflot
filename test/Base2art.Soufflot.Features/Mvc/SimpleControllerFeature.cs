@@ -19,51 +19,51 @@
         [Test]
         public void ShouldLoadRenderingController()
         {
-            IRenderingController controller = new TestRenderingController();
+            IRenderingRouted controller = new TestRenderingController();
             controller.Execute(new TestHttpContext(), new List<PositionedResult>()).Should().NotBeNull();
-            controller.NonRenderingControllers.Should().BeEmpty();
-            controller.RenderingControllers.Should().BeEmpty();
+            controller.NonRenderingRoutedItems.Should().BeEmpty();
+            controller.RenderingRoutedItems.Should().BeEmpty();
         }
         
         [Test]
         public void ShouldLoadNonRenderingController()
         {
-            INonRenderingController controller = new TestNonRenderingController();
+            INonRenderingRouted controller = new TestNonRenderingController();
             controller.Execute(new TestHttpContext());
-            controller.NonRenderingControllers.Should().BeEmpty();
+            controller.NonRenderingRoutedItems.Should().BeEmpty();
         }
         
         [Test]
         public void ShouldLoadNullRenderingController()
         {
-            IRenderingController controller = new NullRenderingController();
+            IRenderingRouted controller = new NullRenderingController();
             controller.Execute(new TestHttpContext(), new List<PositionedResult>()).Should().NotBeNull();
-            controller.NonRenderingControllers.Should().BeEmpty();
-            controller.RenderingControllers.Should().BeEmpty();
+            controller.NonRenderingRoutedItems.Should().BeEmpty();
+            controller.RenderingRoutedItems.Should().BeEmpty();
         }
         
         [Test]
         public void ShouldLoadNullNonRenderingController()
         {
-            INonRenderingController controller = new NullNonRenderingController();
+            INonRenderingRouted controller = new NullNonRenderingController();
             controller.Execute(new TestHttpContext());
-            controller.NonRenderingControllers.Should().BeEmpty();
+            controller.NonRenderingRoutedItems.Should().BeEmpty();
         }
 
         
         [Test]
         public void ShouldLoadChildNonRenderingController()
         {
-            INonRenderingController controller = new TestChildNonRenderingController();
-            controller.NonRenderingControllers.Length.Should().Be(2);
+            INonRenderingRouted controller = new TestChildNonRenderingController();
+            controller.NonRenderingRoutedItems.Length.Should().Be(2);
         }
 
         [Test]
         public void ShouldLoadChildRenderingController()
         {
-            IRenderingController controller = new TestChildRenderingController();
+            IRenderingRouted controller = new TestChildRenderingController();
             
-			var nonRenderingControllers = controller.NonRenderingControllers;
+			var nonRenderingControllers = controller.NonRenderingRoutedItems;
 			nonRenderingControllers.Length.Should().Be(2);
 			
 			var testHttpContext = new TestHttpContext();
@@ -74,13 +74,13 @@
 			
 			nonRenderingControllers[1].Execute(new TestHttpContext());
             
-			var renderingControllers = controller.RenderingControllers;
+			var renderingControllers = controller.RenderingRoutedItems;
 			renderingControllers.Length.Should().Be(3);
-			renderingControllers[0].RenderingController.Execute(new TestHttpContext(), new List<PositionedResult>())
+			renderingControllers[0].RenderingRoutedItem.Execute(new TestHttpContext(), new List<PositionedResult>())
 			    .Content.BodyAsString.Should().Be("Here You Go");
-			renderingControllers[1].RenderingController.Execute(new TestHttpContext(), new List<PositionedResult>())
+			renderingControllers[1].RenderingRoutedItem.Execute(new TestHttpContext(), new List<PositionedResult>())
 			    .Content.BodyAsString.Should().BeEmpty();
-			renderingControllers[2].RenderingController.Execute(new TestHttpContext(), new List<PositionedResult>())
+			renderingControllers[2].RenderingRoutedItem.Execute(new TestHttpContext(), new List<PositionedResult>())
 			    .Content.BodyAsString.Should().BeEmpty();
         }
 
@@ -106,7 +106,7 @@
                 return httpContext.Ok();
             }
             
-            protected override IEnumerable<INonRenderingController> NonRenderingControllers
+            protected override IEnumerable<INonRenderingRouted> NonRenderingControllers
             {
                 get
                 {
@@ -115,12 +115,12 @@
                 }
             }
             
-            protected override IEnumerable<IPositionedRenderingController> RenderingControllers
+            protected override IEnumerable<IPositionedRenderingRouted> RenderingControllers
             {
                 get
                 {
                     yield return this.CreateRenderingController(0, 0, (x, y) => x.Ok(new SimpleContent{ BodyContent = "Here You Go" }));
-                    yield return this.CreateRenderingController(0, 0, (IRenderingController)null);
+                    yield return this.CreateRenderingController(0, 0, (IRenderingRouted)null);
                     yield return this.CreateRenderingController(0, 0, (Func<IHttpContext, List<PositionedResult>, IResult>)null);
                 }
             }
@@ -132,7 +132,7 @@
             {
             }
             
-            protected override IEnumerable<INonRenderingController> NonRenderingControllers
+            protected override IEnumerable<INonRenderingRouted> NonRenderingControllers
             {
                 get
                 {

@@ -6,17 +6,16 @@
     using System.Linq.Expressions;
 
     using Base2art.Soufflot.Linq;
-    using Base2art.Soufflot.Mvc;
 
     using Base2art.Soufflot.Http;
 
-    public class ControllerExecutionManager
+    public class RoutedExecutionManager
     {
         private readonly IApplication application;
 
         private readonly IRouter router;
 
-        public ControllerExecutionManager(IApplication application, IRouter router)
+        public RoutedExecutionManager(IApplication application, IRouter router)
         {
             this.application = application;
             this.router = router;
@@ -30,56 +29,56 @@
             }
         }
 
-        public IResult ExecuteController(IHttpContext httpContext)
+        public IResult ExecuteRoute(IHttpContext httpContext)
         {
-            var findRenderingControllerType = this.router.FindRenderingControllerType(httpContext.Request);
-            if (findRenderingControllerType == null)
+            var findRenderingRoutedType = this.router.FindRenderingRoutedType(httpContext.Request);
+            if (findRenderingRoutedType == null)
             {
-                return application.OnControllerNotFound(httpContext);
+                return application.OnRouteNotFound(httpContext);
             }
 
-            var findNonRenderingControllerTypes = this.router.FindNonRenderingControllerTypes(httpContext.Request);
+            var findNonRenderingRoutedTypes = this.router.FindNonRenderingRoutedTypes(httpContext.Request);
 
-            IClass<IRenderingController> renderingControllerClass = findRenderingControllerType.ControllerClass;
+            IClass<IRenderingRouted> renderingRoutedClass = findRenderingRoutedType.RoutedClass;
             
-            if (renderingControllerClass == null)
+            if (renderingRoutedClass == null)
             {
-                return application.OnControllerNotFound(httpContext);
+                return application.OnRouteNotFound(httpContext);
             }
 
-            IRenderingController mainController = application.CreateInstance(renderingControllerClass, application.Mode == ApplicationMode.Prod);
+            IRenderingRouted mainRoutedItem = application.CreateInstance(renderingRoutedClass, application.Mode == ApplicationMode.Prod);
             
-            if (mainController == null)
+            if (mainRoutedItem == null)
             {
-                return application.OnControllerNotFound(httpContext);
+                return application.OnRouteNotFound(httpContext);
             }
 
-            INonRenderingController[] nonRenderingControllers = findNonRenderingControllerTypes
+            INonRenderingRouted[] nonRenderingRoutedItems = findNonRenderingRoutedTypes
                 .Where(x => x != null)
-                .Select(x => application.CreateInstance(x.ControllerClass, true))
+                .Select(x => application.CreateInstance(x.RoutedClass, true))
                 .ToArray();
 
-            this.ExecuteNonRenderingControllers(httpContext, nonRenderingControllers);
+            this.ExecuteNonRenderingRoutes(httpContext, nonRenderingRoutedItems);
 
-            return this.ExecuteRenderingController(httpContext, mainController, findRenderingControllerType.Expression);
+            return this.ExecuteRenderingRoute(httpContext, mainRoutedItem, findRenderingRoutedType.Expression);
         }
 
-        private IResult ExecuteRenderingController(
+        private IResult ExecuteRenderingRoute(
             IHttpContext httpContext, 
-            IRenderingController renderingController,
-            Expression<Func<IRenderingController, IHttpContext, List<PositionedResult>, IResult>> expression)
+            IRenderingRouted renderingRouted,
+            Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>> expression)
         {
-            this.ExecuteNonRenderingControllers(httpContext, renderingController.NonRenderingControllers);
+            this.ExecuteNonRenderingRoutes(httpContext, renderingRouted.NonRenderingRoutedItems);
 
             List<PositionedResult> childResults = new List<PositionedResult>();
-            foreach (var subRenderingController in renderingController.RenderingControllers.Coalesce())
+            foreach (var subRenderingRoutedItem in renderingRouted.RenderingRoutedItems.Coalesce())
             {
-                var subResult = this.ExecuteRenderingController(httpContext, subRenderingController.RenderingController, null);
+                var subResult = this.ExecuteRenderingRoute(httpContext, subRenderingRoutedItem.RenderingRoutedItem, null);
 
                 var pr = new PositionedResult
                 {
-                    Container = subRenderingController.Container,
-                    ContainerPriority = subRenderingController.ContainerPriority,
+                    Container = subRenderingRoutedItem.Container,
+                    ContainerPriority = subRenderingRoutedItem.ContainerPriority,
                     Result = new SimpleResult
                              {
                                  Content = subResult.Content
@@ -91,20 +90,20 @@
 
             if (expression != null)
             {
-                return expression.Compile().Invoke(renderingController, httpContext, childResults);
+                return expression.Compile().Invoke(renderingRouted, httpContext, childResults);
             }
 
-            return renderingController.Execute(httpContext, childResults);
+            return renderingRouted.Execute(httpContext, childResults);
         }
 
-        private void ExecuteNonRenderingControllers(
+        private void ExecuteNonRenderingRoutes(
             IHttpContext httpContext,
-            INonRenderingController[] nonRenderingControllers)
+            INonRenderingRouted[] nonRenderingRoutedItems)
         {
-            foreach (var nonRenderingController in nonRenderingControllers.Coalesce())
+            foreach (var nonRenderingRoutedItem in nonRenderingRoutedItems.Coalesce())
             {
-                nonRenderingController.Execute(httpContext);
-                this.ExecuteNonRenderingControllers(httpContext, nonRenderingController.NonRenderingControllers);
+                nonRenderingRoutedItem.Execute(httpContext);
+                this.ExecuteNonRenderingRoutes(httpContext, nonRenderingRoutedItem.NonRenderingRoutedItems);
             }
         }
     }

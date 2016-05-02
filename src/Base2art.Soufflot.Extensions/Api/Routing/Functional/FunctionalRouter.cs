@@ -20,28 +20,28 @@
             this.nonRenderingControllerSearchDelegates = nonRenderingControllerSearchDelegates;
         }
 
-        public IRouteData<IRenderingController> FindRenderingControllerType(IHttpRequest request)
+        public IRouteData<IRenderingRouted> FindRenderingControllerType(IHttpRequest request)
         {
             foreach (var routeFindingDelegate in this.renderingControllerSearchDelegates.Coalesce())
             {
                 var rez = routeFindingDelegate.FindType(request);
                 if (rez != null)
                 {
-                    return new FunctionalRouteData<IRenderingController>(rez.GetClass().As<IRenderingController>());
+                    return new FunctionalRouteData<IRenderingRouted>(rez.GetClass().As<IRenderingRouted>());
                 }
             }
 
             return null;
         }
 
-        public IEnumerable<IRouteData<INonRenderingController>> FindNonRenderingControllerTypes(IHttpRequest request)
+        public IEnumerable<IRouteData<INonRenderingRouted>> FindNonRenderingControllerTypes(IHttpRequest request)
         {
             foreach (var routeFindingDelegate in this.nonRenderingControllerSearchDelegates.Coalesce())
             {
                 var rez = routeFindingDelegate.FindType(request);
                 if (rez != null)
                 {
-                    yield return new FunctionalRouteData<INonRenderingController>(rez.GetClass().As<INonRenderingController>());
+                    yield return new FunctionalRouteData<INonRenderingRouted>(rez.GetClass().As<INonRenderingRouted>());
                 }
             }
         }

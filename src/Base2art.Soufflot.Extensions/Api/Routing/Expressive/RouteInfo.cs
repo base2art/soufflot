@@ -24,7 +24,7 @@ namespace Base2art.Soufflot.Api.Routing.Expressive
 
         public RouteExpressionTree ExpressionTree { get; set; }
 
-        public Expression<Func<IRenderingController, IHttpContext, List<PositionedResult>, IResult>>
+        public Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>>
             WrapperExpression { get; set; }
     }
 }

@@ -10,7 +10,7 @@
 
     public class AppBaseFeature
     {
-        private ControllerExecutionManager manager;
+        private RoutedExecutionManager manager;
 
         public string CommonSalt
         {
@@ -21,7 +21,7 @@
         }
 
 
-        public ControllerExecutionManager Manager
+        public RoutedExecutionManager Manager
         {
             get
             {
@@ -53,10 +53,10 @@
             }
         }
 
-        private static ControllerExecutionManager CreateManager(ApplicationMode applicationMode)
+        private static RoutedExecutionManager CreateManager(ApplicationMode applicationMode)
         {
             IApplication app = new Application(applicationMode, Environment.CurrentDirectory, null);
-            var m = new ControllerExecutionManager(
+            var m = new RoutedExecutionManager(
                 app,
                 new FunctionalRouter(new[] { new FunctionalRenderingControllerSearchDelegate(MapPath) }, null));
             return m;

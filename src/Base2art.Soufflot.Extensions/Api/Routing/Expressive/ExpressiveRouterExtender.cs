@@ -16,7 +16,7 @@
             HttpMethod? method,
             string domain,
             string path)
-            where TController : IRenderingController
+            where TController : IRenderingRouted
         {
             if (method.HasValue)
             {
@@ -34,7 +34,7 @@
             string domain,
             string path,
             Expression<Func<TController, IHttpContext, List<PositionedResult>, IResult>> func)
-            where TController : IRenderingController
+            where TController : IRenderingRouted
         {
             if (method.HasValue)
             {
@@ -54,27 +54,27 @@
 
         // This method is only useful if you are in a single domain Application
         public static IRoute FindRoute<TController>(this IExpressiveReverseRouter router)
-            where TController : IRenderingController
+            where TController : IRenderingRouted
         {
             return CoalesceRoute(router.For<TController>());
         }
 
         // This method is only useful if you are in a single domain Application
         public static IRoute FindRouteWith<TController>(this IExpressiveReverseRouter router, params object[] objects)
-            where TController : IRenderingController
+            where TController : IRenderingRouted
         {
             return router.FindNamedRouteWith<TController>("Execute", objects);
         }
 
         // This method is only useful if you are in a single domain Application
         public static IRoute FindNamedRoute<TController>(this IExpressiveReverseRouter router, string name) 
-            where TController : IRenderingController
+            where TController : IRenderingRouted
         {
             return router.FindNamedRouteWith<TController>(name, new object[0]);
         }
 
         // This method is only useful if you are in a single domain Application
-        public static IRoute FindNamedRouteWith<TController>(this IExpressiveReverseRouter router, string name, params object[] objects) where TController : IRenderingController
+        public static IRoute FindNamedRouteWith<TController>(this IExpressiveReverseRouter router, string name, params object[] objects) where TController : IRenderingRouted
         {
             var func = Create<TController>((x, y, z) => x.Execute(y, z));
 
@@ -103,12 +103,12 @@
         }
 
         private static Expression<Func<T, IHttpContext, List<PositionedResult>, IResult>> Create<T>(Expression<Func<T, IHttpContext, List<PositionedResult>, IResult>> func)
-            where T : IRenderingController
+            where T : IRenderingRouted
         {
             return func;
         }
 
-        private static IRoute CoalesceRoute<TController>(IRoutable<TController> route) where TController : IRenderingController
+        private static IRoute CoalesceRoute<TController>(IRoutable<TController> route) where TController : IRenderingRouted
         {
             if (!route.HasValue)
             {

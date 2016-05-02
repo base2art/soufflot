@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using Base2art.MonkeyTail;
     using Base2art.MonkeyTail.Config;
     using CommandLine;
     
@@ -11,6 +12,10 @@
         // Omitting long name, default --verbose
         [Option('r', "reference", HelpText = "Dlls to reference")]
         public IEnumerable<Reference> References { get; set; }
+        
+        // Omitting long name, default --verbose
+        [Option('f', "format", HelpText = "Dlls to reference")]
+        public IEnumerable<FileType> OutputFormats { get; set; }
 
         [Option('i', "import", HelpText = "Classes to import into the views")]
         public IEnumerable<string> Imports { get; set; }
@@ -48,6 +53,11 @@
         IReference[] IViewsSettings.References
         {
             get { return (this.References ?? new Reference[0]).Select<Reference, IReference>(x => x).ToArray(); }
+        }
+        
+        IFileType[] IViewsSettings.OutputFormats
+        {
+            get { return (this.OutputFormats ?? new FileType[0]).Select<FileType, IFileType>(x => x).ToArray(); }
         }
 
         string[] IViewsSettings.Imports

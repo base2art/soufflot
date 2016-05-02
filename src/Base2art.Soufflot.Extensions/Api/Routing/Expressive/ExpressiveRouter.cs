@@ -45,29 +45,29 @@
 
         #region Routing
 
-        public IRouteData<IRenderingController> FindRenderingControllerType(IHttpRequest request)
+        public IRouteData<IRenderingRouted> FindRenderingControllerType(IHttpRequest request)
         {
             var routeDatum = this.RenderingControllersRouteData;
-            return this.Filter<IRenderingController>(request, routeDatum).FirstOrDefault();
+            return this.Filter<IRenderingRouted>(request, routeDatum).FirstOrDefault();
         }
 
-        public IEnumerable<IRouteData<INonRenderingController>> FindNonRenderingControllerTypes(IHttpRequest request)
+        public IEnumerable<IRouteData<INonRenderingRouted>> FindNonRenderingControllerTypes(IHttpRequest request)
         {
             var routeDatum = this.NonRenderingControllersRouteData;
-            return this.Filter<INonRenderingController>(request, routeDatum);
+            return this.Filter<INonRenderingRouted>(request, routeDatum);
         }
 
         #endregion
 
         #region ReverseRouting
 
-        public IRoutable<T> For<T>() where T : IRenderingController
+        public IRoutable<T> For<T>() where T : IRenderingRouted
         {
             return this.ForController<T>();
         }
 
         protected virtual IRoutable<T> ForController<T>()
-            where T : IRenderingController
+            where T : IRenderingRouted
         {
             return new Routable<T>(this.RenderingControllersRouteData);
         }
@@ -93,13 +93,13 @@
         }
 
         public void RegisterNonRenderingRoute<T>(HttpMethod? method, string hostName, string path)
-                    where T : INonRenderingController
+                    where T : INonRenderingRouted
         {
             this.RegisterNonRendering<T>(method, hostName, path);
         }
 
         protected virtual RouteInfo RegisterNonRendering<T>(HttpMethod? method, string hostName, string path)
-            where T : INonRenderingController
+            where T : INonRenderingRouted
         {
             var routeData = new RouteInfo { Method = method, Host = hostName, Path = path, Type = typeof(T) };
             this.NonRenderingControllersRouteData.AddLast(routeData);

@@ -9,7 +9,7 @@ namespace Base2art.Soufflot.Samples.Session
 
     public class FlashWriterWithRedirectController : SimpleRenderingController
     {
-        protected override IEnumerable<INonRenderingController> NonRenderingControllers
+        protected override IEnumerable<INonRenderingRouted> NonRenderingControllers
         {
             get
             {

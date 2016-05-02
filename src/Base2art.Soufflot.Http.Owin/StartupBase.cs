@@ -15,7 +15,7 @@
             var config = this.CreateConfiguration(path);
             
             IApplication application = ApplicationFinder.FindApplication(path, config);
-            var manager = new ControllerExecutionManager(application, application.CreateRouter());
+            var manager = new RoutedExecutionManager(application, application.CreateRouter());
             var salt = this.GetSalt(application);
             ILogger logger = this.GetLogger(application);
             var appWireUps = application.CreateInstances(Class.GetClass<IApplicationExtender>(), true) ?? new IApplicationExtender[0];
