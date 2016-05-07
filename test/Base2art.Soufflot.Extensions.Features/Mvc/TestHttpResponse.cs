@@ -10,6 +10,7 @@ namespace Base2art.Soufflot.Mvc
         private readonly HeaderCollection coll = new HeaderCollection();
 
         public int StatusCode { get; set; }
+
         public string ContentType { get; set; }
 
         public IHttpReadOnlyHeaderCollection Headers

@@ -11,6 +11,7 @@ namespace Base2art.Soufflot
         private class StringInjectTestObject
         {
             public string foo { get; set; }
+
             public object bar { get; set; }
         }
 
@@ -73,6 +74,7 @@ namespace Base2art.Soufflot
             string expected = "This is a test: foo={foo}, bar={bar}";
             Assert.AreEqual(expected, formatString.Inject(o));
         }
+
         /// <summary>
         /// Tests for a missing property of the injection object
         ///</summary>

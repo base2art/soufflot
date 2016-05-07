@@ -59,7 +59,6 @@ namespace Base2art.Soufflot.CommandRunner.Tasks
  
 function update-Nuget-config()
 {
-  
   $addEl = $packageSource.selectSingleNode("add[@key='Base2Art']")
   
   if ($addEl -eq $null)

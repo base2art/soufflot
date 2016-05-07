@@ -194,6 +194,7 @@ namespace Base2art.Soufflot.Api.Routing.Expressive
 
             return objs.ToArray();
         }
+
         public IRoute FindRouteWith<T>(params object[] objects) where T : IRenderingController
         {
             return this.FindNamedRouteWith<T>(ExecutionMethod, objects);

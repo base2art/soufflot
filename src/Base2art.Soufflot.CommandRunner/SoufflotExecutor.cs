@@ -37,6 +37,7 @@ namespace Base2art.Soufflot.CommandRunner
         private WebServer webServer;
 
         private readonly IViewsSettings settings;
+
         public SoufflotExecutor(string directoryToWatch, IViewsSettings settings, IMessenger messenger, int? port)
         {
             this.settings = settings;

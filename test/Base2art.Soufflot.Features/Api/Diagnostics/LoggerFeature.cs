@@ -66,6 +66,7 @@ namespace Base2art.Soufflot.Api.Diagnostics
         }
 
         private StringWriter par;
+
         private string[] Messages(ILogger logger)
         {
 //			var textWriterLogger = (TextWriterLogger)logger;
