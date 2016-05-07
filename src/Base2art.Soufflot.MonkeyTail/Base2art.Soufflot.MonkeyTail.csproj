@@ -64,6 +64,7 @@
     <Compile Include="Api\BoxModelRenderingController.cs" />
     <Compile Include="Api\ExpressiveTemplate.cs" />
     <Compile Include="Api\GuidedPositionedRenderingController.cs" />
+    <Compile Include="Api\NullRenderingRouted.cs" />
     <Compile Include="Mvc\MonketTailContentMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\common\CompanyInfo.cs">

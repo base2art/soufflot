@@ -6,18 +6,18 @@
 namespace Base2art.MonkeyTail.Api
 {
     using System;
-    using Base2art.Soufflot.Mvc;
+    using Base2art.Soufflot.Api;
     
     public class BoxModelPositionedRenderingController : GuidedPositionedRenderingController<BoxModelGuidePost>
     {
         public BoxModelPositionedRenderingController()
-            : this(BoxModelGuidePost.Center, new NullRenderingController(), 0)
+            : this(BoxModelGuidePost.Center, new NullRenderingRouted(), 0)
         {
         }
 
         public BoxModelPositionedRenderingController(
             BoxModelGuidePost guidepost, 
-            IRenderingController renderingController, 
+            IRenderingRouted renderingController, 
             int containerPriority)
             :base(guidepost ?? BoxModelGuidePost.Center, renderingController, containerPriority)
         {

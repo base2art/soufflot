@@ -33,7 +33,6 @@ namespace Base2art.Soufflot.Api
             try
             {
                 return Activator.CreateInstance(type);
-                
             }
             catch (Exception ex)
             {
