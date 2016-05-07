@@ -34,7 +34,8 @@ namespace Base2art.Soufflot.Api
             {
                 return Activator.CreateInstance(type);
                 
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 if (!type.IsAssignableFrom(typeof(IApplicationLoggerFactory)))
                 {

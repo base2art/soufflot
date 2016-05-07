@@ -125,7 +125,8 @@ namespace Base2art.Soufflot.CommandRunner
                 try
                 {
                     fsInfo.Delete();
-                } catch (Exception e)
+                }
+                catch (Exception e)
                 {
                     this.messenger.Error(e.ToString());
                     //                    throw;

@@ -63,7 +63,8 @@ namespace Base2art.Soufflot.Api.Config
             {
                 File.Delete(path);
             // disable once EmptyGeneralCatchClause
-            } catch (Exception)
+            }
+            catch (Exception)
             {
             }
         }
