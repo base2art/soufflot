@@ -12,10 +12,7 @@ namespace Base2art.Soufflot.Http.Util
 
         public byte[] Value
         {
-            get
-            {
-                return this.value;
-            }
+            get { return this.value; }
         }
     }
 }

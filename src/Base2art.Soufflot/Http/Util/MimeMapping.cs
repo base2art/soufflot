@@ -1,4 +1,3 @@
-
 namespace Base2art.Soufflot.Http.Util
 {
     using System;

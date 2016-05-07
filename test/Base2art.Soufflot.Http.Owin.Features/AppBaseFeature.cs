@@ -14,10 +14,7 @@ namespace Base2art.Soufflot.Http.Owin
 
         public string CommonSalt
         {
-            get
-            {
-                return "salt";
-            }
+            get { return "salt"; }
         }
 
         public RoutedExecutionManager Manager
@@ -46,10 +43,7 @@ namespace Base2art.Soufflot.Http.Owin
 
         protected virtual ApplicationMode AppMode
         {
-            get
-            {
-                return ApplicationMode.Test;
-            }
+            get { return ApplicationMode.Test; }
         }
 
         private static RoutedExecutionManager CreateManager(ApplicationMode applicationMode)

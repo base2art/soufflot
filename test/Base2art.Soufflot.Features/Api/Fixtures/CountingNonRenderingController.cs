@@ -9,10 +9,7 @@ namespace Base2art.Soufflot.Api.Fixtures
         public static int Count = 0;
         public INonRenderingRouted[] NonRenderingControllers
         {
-            get
-            {
-                return new INonRenderingRouted[] { new SubCountingNonRenderingController() };
-            }
+            get { return new INonRenderingRouted[] { new SubCountingNonRenderingController() }; }
         }
 
         public void Execute(IHttpContext context)

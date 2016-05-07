@@ -29,10 +29,7 @@ namespace Base2art.Soufflot.Api.Fixtures
 
         public INonRenderingRouted[] NonRenderingControllers
         {
-            get
-            {
-                return new INonRenderingRouted[0];
-            }
+            get { return new INonRenderingRouted[0]; }
         }
 
         public IResult Execute(IHttpContext httpContext, List<PositionedResult> childResults)

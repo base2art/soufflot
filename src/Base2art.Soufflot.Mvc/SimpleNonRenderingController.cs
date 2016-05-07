@@ -11,10 +11,7 @@ namespace Base2art.Soufflot.Mvc
     {
         INonRenderingRouted[] INonRenderingRouted.NonRenderingRoutedItems
         {
-            get
-            {
-                return (this.NonRenderingRoutedItems ?? new INonRenderingRouted[] { }).ToArray();
-            }
+            get { return (this.NonRenderingRoutedItems ?? new INonRenderingRouted[] { }).ToArray(); }
         }
 
         protected virtual IEnumerable<INonRenderingRouted> NonRenderingRoutedItems

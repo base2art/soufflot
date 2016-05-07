@@ -31,18 +31,12 @@ namespace Base2art.Soufflot.Api.Diagnostics
 
             public LogLevel Level
             {
-                get
-                {
-                    return this.messageLevel;
-                }
+                get { return this.messageLevel; }
             }
 
             public string Message
             {
-                get
-                {
-                    return this.message;
-                }
+                get { return this.message; }
             }
 
             public override string ToString()

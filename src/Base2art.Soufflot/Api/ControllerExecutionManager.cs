@@ -23,10 +23,7 @@ namespace Base2art.Soufflot.Api
 
         public IApplication Application
         {
-            get
-            {
-                return this.application;
-            }
+            get { return this.application; }
         }
 
         public IResult ExecuteRoute(IHttpContext httpContext)

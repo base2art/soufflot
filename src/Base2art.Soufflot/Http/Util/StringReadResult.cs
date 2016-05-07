@@ -12,10 +12,7 @@ namespace Base2art.Soufflot.Http.Util
 
         public string Value
         {
-            get
-            {
-                return this.value;
-            }
+            get { return this.value; }
         }
     }
 }

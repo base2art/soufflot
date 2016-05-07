@@ -14,10 +14,7 @@ namespace Base2art.Soufflot.Mvc
 
         public IHttpReadOnlyHeaderCollection Headers
         {
-            get
-            {
-                return this.coll;
-            }
+            get { return this.coll; }
         }
 
         public void DiscardCookies(params string[] cookieNames)

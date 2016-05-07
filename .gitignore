@@ -15,3 +15,4 @@ ProfilingSessions
 *.snk
 
 scrap
+src/Base2art.Soufflot/StyleCopViolations.xml

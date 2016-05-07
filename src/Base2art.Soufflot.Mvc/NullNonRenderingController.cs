@@ -9,10 +9,7 @@ namespace Base2art.Soufflot.Mvc
 
         INonRenderingRouted[] INonRenderingRouted.NonRenderingRoutedItems
         {
-            get
-            {
-                return new INonRenderingRouted[0];
-            }
+            get { return new INonRenderingRouted[0]; }
         }
     }
 }

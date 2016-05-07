@@ -11,10 +11,7 @@ namespace Base2art.Soufflot.Http.Util
 
         public bool MaxLengthExceded
         {
-            get
-            {
-                return this.maxLengthExceded;
-            }
+            get { return this.maxLengthExceded; }
         }
     }
 }

@@ -23,26 +23,17 @@ namespace Base2art.Soufflot.Api.Routing
 
         public IClass<T> ControllerClass
         {
-            get
-            {
-                return this.controllerClass;
-            }
+            get { return this.controllerClass; }
         }
 
         public Type Type
         {
-            get
-            {
-                return this.ControllerClass.Type;
-            }
+            get { return this.ControllerClass.Type; }
         }
 
         public Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>> Expression
         {
-            get
-            {
-                return this.expression;
-            }
+            get { return this.expression; }
         }
     }
 }

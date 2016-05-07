@@ -72,18 +72,12 @@ namespace Base2art.Soufflot.Mvc
 
             byte[] IContent.Body
             {
-                get
-                {
-                    return Encoding.Default.GetBytes(this.content.Body);
-                }
+                get { return Encoding.Default.GetBytes(this.content.Body); }
             }
 
             string IContent.BodyAsString
             {
-                get
-                {
-                    return this.content.Body;
-                }
+                get { return this.content.Body; }
             }
 
             string IContent.ContentType
@@ -99,10 +93,7 @@ namespace Base2art.Soufflot.Mvc
 
             string Base2art.MonkeyTail.IContent.Body
             {
-                get
-                {
-                    return this.content.Body;
-                }
+                get { return this.content.Body; }
             }
             
             TType Base2art.MonkeyTail.IAppendable<TType>.Append(TType paramT)

@@ -19,10 +19,7 @@ namespace Base2art.Soufflot.Api
 
         public IContent Content
         {
-            get
-            {
-                return this.content ?? new SimpleContent { BodyContent = string.Empty };
-            }
+            get { return this.content ?? new SimpleContent { BodyContent = string.Empty }; }
         }
 
         public IResult As(string newContentType)

@@ -44,26 +44,17 @@ namespace Base2art.PlayN.Security
             
             public bool IsAuthenticated
             {
-                get
-                {
-                    return !string.IsNullOrWhiteSpace(this.userName);
-                }
+                get { return !string.IsNullOrWhiteSpace(this.userName); }
             }
 
             public string UserName
             {
-                get
-                {
-                    return this.userName;
-                }
+                get { return this.userName; }
             }
 
             public IReadOnlyArrayList<string> GroupNames
             {
-                get
-                {
-                    return this.groupNames;
-                }
+                get { return this.groupNames; }
             }
         }
     }

@@ -110,18 +110,12 @@ namespace Base2art.Soufflot.Api.Routing.Expressive
 
         protected LinkedList<RouteInfo> RenderingControllersRouteData
         {
-            get
-            {
-                return this.renderingControllers;
-            }
+            get { return this.renderingControllers; }
         }
 
         protected LinkedList<RouteInfo> NonRenderingControllersRouteData
         {
-            get
-            {
-                return this.nonRenderingControllers;
-            }
+            get { return this.nonRenderingControllers; }
         }
 
         protected virtual IEnumerable<ExpressiveRouteData<T>> Filter<T>(IHttpRequest request, LinkedList<RouteInfo> routeDatum)

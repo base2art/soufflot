@@ -34,10 +34,7 @@ namespace Base2art.Soufflot.Api.Routing.Expressive
 
         public bool HasValue
         {
-            get
-            {
-                return this.Explode() != null;
-            }
+            get { return this.Explode() != null; }
         }
 
         public string Explode()

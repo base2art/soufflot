@@ -21,10 +21,7 @@ namespace Base2art.Soufflot.Api.Routing.Expressive
 
         public string Name
         {
-            get
-            {
-                return this.name;
-            }
+            get { return this.name; }
         }
 
 //        public Regex Parameters

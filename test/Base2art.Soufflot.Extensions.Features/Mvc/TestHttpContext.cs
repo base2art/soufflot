@@ -42,10 +42,7 @@ namespace Base2art.Soufflot.Mvc
 
         IHttpResponse IHttpContext.Response
         {
-            get
-            {
-                return this.Response;
-            }
+            get { return this.Response; }
         }
 
         IHttpRequest IHttpContext.Request
@@ -58,10 +55,7 @@ namespace Base2art.Soufflot.Mvc
 
         public TestHttpResponse Response
         {
-            get
-            {
-                return this.response;
-            }
+            get { return this.response; }
         }
     }
 }

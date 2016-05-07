@@ -11,18 +11,12 @@ namespace Base2art.Soufflot.Api.Fixtures
     {
         public IPositionedRenderingRouted[] RenderingControllers
         {
-            get
-            {
-                return new IPositionedRenderingRouted[0];
-            }
+            get { return new IPositionedRenderingRouted[0]; }
         }
 
         public INonRenderingRouted[] NonRenderingControllers
         {
-            get
-            {
-                return new INonRenderingRouted[] { new CountingNonRenderingController() };
-            }
+            get { return new INonRenderingRouted[] { new CountingNonRenderingController() }; }
         }
 
         public IResult Execute(IHttpContext httpContext, List<PositionedResult> childResults)

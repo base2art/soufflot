@@ -22,18 +22,12 @@ namespace Base2art.Soufflot.Http.Owin
 
         public HttpReadOnlyHeaderCollection Headers
         {
-            get
-            {
-                return new HttpReadOnlyHeaderCollection(this.response.Headers);
-            }
+            get { return new HttpReadOnlyHeaderCollection(this.response.Headers); }
         }
 
         IHttpReadOnlyHeaderCollection IHttpResponse.Headers
         {
-            get
-            {
-                return this.Headers;
-            }
+            get { return this.Headers; }
         }
 
         public void DiscardCookies(params string[] cookieNames)

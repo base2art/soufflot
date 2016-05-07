@@ -60,82 +60,52 @@ namespace Base2art.Soufflot.Http.Owin
 
         public IApplication ApplicationInstance
         {
-            get
-            {
-                return this.application;
-            }
+            get { return this.application; }
         }
 
         public ILogger Logger
         {
-            get
-            {
-                return this.logger;
-            }
+            get { return this.logger; }
         }
 
         IHttpFlash IHttpContext.Flash
         {
-            get
-            {
-                return this.Flash;
-            }
+            get { return this.Flash; }
         }
 
         IHttpSession IHttpContext.Session
         {
-            get
-            {
-                return this.Session;
-            }
+            get { return this.Session; }
         }
 
         IHttpRequest IHttpContext.Request
         {
-            get
-            {
-                return this.Request;
-            }
+            get { return this.Request; }
         }
 
         IHttpResponse IHttpContext.Response
         {
-            get
-            {
-                return this.Response;
-            }
+            get { return this.Response; }
         }
 
         public HttpFlash Flash
         {
-            get
-            {
-                return this.httpFlash;
-            }
+            get { return this.httpFlash; }
         }
 
         public HttpSession Session
         {
-            get
-            {
-                return this.httpSession;
-            }
+            get { return this.httpSession; }
         }
 
         public HttpRequest Request
         {
-            get
-            {
-                return this.httpRequest;
-            }
+            get { return this.httpRequest; }
         }
 
         public HttpResponse Response
         {
-            get
-            {
-                return this.httpResponse;
-            }
+            get { return this.httpResponse; }
         }
 
         public void Unpack()

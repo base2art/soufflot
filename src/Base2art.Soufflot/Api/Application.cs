@@ -39,34 +39,22 @@ namespace Base2art.Soufflot.Api
 
         public string RootDirectory
         {
-            get
-            {
-                return this.rootDirectory;
-            }
+            get { return this.rootDirectory; }
         }
 
         public ILogger ApplicationLogger
         {
-            get
-            {
-                return this.applicationLogger.Value;
-            }
+            get { return this.applicationLogger.Value; }
         }
 
         protected virtual LogLevel ApplicationLogLevel
         {
-            get
-            {
-                return this.Mode == ApplicationMode.Prod ? LogLevels.DeveloperFinest : LogLevels.ApplicationError;
-            }
+            get { return this.Mode == ApplicationMode.Prod ? LogLevels.DeveloperFinest : LogLevels.ApplicationError; }
         }
 
         public ApplicationMode Mode
         {
-            get
-            {
-                return this.mode;
-            }
+            get { return this.mode; }
         }
         
         protected virtual IComponentResolver ApplicationInjector

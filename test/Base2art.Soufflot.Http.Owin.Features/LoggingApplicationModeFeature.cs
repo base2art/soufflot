@@ -19,10 +19,7 @@ namespace Base2art.Soufflot.Http.Owin
 
         protected override ApplicationMode AppMode
         {
-            get
-            {
-                return this.applicationMode;
-            }
+            get { return this.applicationMode; }
         }
 
         [Test]

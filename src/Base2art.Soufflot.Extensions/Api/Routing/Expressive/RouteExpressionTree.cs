@@ -20,26 +20,17 @@ namespace Base2art.Soufflot.Api.Routing.Expressive
 
         public string MethodName
         {
-            get
-            {
-                return this.methodName;
-            }
+            get { return this.methodName; }
         }
 
         public FunctionalRouteExpressionParameter[] InputParameters
         {
-            get
-            {
-                return this.inputParameters ?? new FunctionalRouteExpressionParameter[0];
-            }
+            get { return this.inputParameters ?? new FunctionalRouteExpressionParameter[0]; }
         }
 
         public RouteExpressionParameter[] Parameters
         {
-            get
-            {
-                return this.parameters ?? new RouteExpressionParameter[0];
-            }
+            get { return this.parameters ?? new RouteExpressionParameter[0]; }
         }
     }
 }

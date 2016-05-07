@@ -18,10 +18,7 @@ namespace Base2art.Soufflot.Api.Diagnostics
 
         public ILogMessage[] Messages
         {
-            get
-            {
-                return this.messages.ToArray();
-            }
+            get { return this.messages.ToArray(); }
         }
     }
 }

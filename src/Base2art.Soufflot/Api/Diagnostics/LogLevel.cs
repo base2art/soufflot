@@ -22,26 +22,17 @@ namespace Base2art.Soufflot.Api.Diagnostics
 
         public byte Level
         {
-            get
-            {
-                return this.logLevel;
-            }
+            get { return this.logLevel; }
         }
 
         public string Name
         {
-            get
-            {
-                return this.name;
-            }
+            get { return this.name; }
         }
 
         public string DisplayName
         {
-            get
-            {
-                return this.displayName;
-            }
+            get { return this.displayName; }
         }
     }
 }

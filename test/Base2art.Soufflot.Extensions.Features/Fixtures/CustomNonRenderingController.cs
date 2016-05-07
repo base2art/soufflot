@@ -7,10 +7,7 @@ namespace Base2art.Soufflot.Fixtures
     {
         public INonRenderingController[] NonRenderingControllers
         {
-            get
-            {
-                return new INonRenderingController[0];
-            }
+            get { return new INonRenderingController[0]; }
         }
 
         public void Execute(IHttpContext httpContext)

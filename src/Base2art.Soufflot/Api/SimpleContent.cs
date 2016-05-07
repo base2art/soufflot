@@ -21,10 +21,7 @@ namespace Base2art.Soufflot.Api
 
         public string BodyAsString
         {
-            get
-            {
-                return this.BodyContent;
-            }
+            get { return this.BodyContent; }
         }
 
         public string ContentType { get; set; }

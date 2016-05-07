@@ -11,18 +11,12 @@ namespace Base2art.Soufflot.Mvc
     {
         IPositionedRenderingRouted[] IRenderingRouted.RenderingRoutedItems
         {
-            get
-            {
-                return (this.RenderingRoutedItems ?? new IPositionedRenderingRouted[] { }).ToArray();
-            }
+            get { return (this.RenderingRoutedItems ?? new IPositionedRenderingRouted[] { }).ToArray(); }
         }
 
         INonRenderingRouted[] IRenderingRouted.NonRenderingRoutedItems
         {
-            get
-            {
-                return (this.NonRenderingRoutedItems ?? new INonRenderingRouted[] { }).ToArray();
-            }
+            get { return (this.NonRenderingRoutedItems ?? new INonRenderingRouted[] { }).ToArray(); }
         }
 
         protected virtual IEnumerable<INonRenderingRouted> NonRenderingRoutedItems

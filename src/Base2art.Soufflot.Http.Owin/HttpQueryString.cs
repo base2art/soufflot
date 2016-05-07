@@ -15,10 +15,7 @@ namespace Base2art.Soufflot.Http.Owin
 
         public string OriginalValue
         {
-            get
-            {
-                return this.originalValue;
-            }
+            get { return this.originalValue; }
         }
     }
 }

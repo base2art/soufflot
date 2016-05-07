@@ -9,10 +9,7 @@ namespace Base2art.Soufflot.Http
 
         public IHttpContext Current
         {
-            get
-            {
-                return ThreadSpecificHttpContext;
-            }
+            get { return ThreadSpecificHttpContext; }
         }
     }
 }

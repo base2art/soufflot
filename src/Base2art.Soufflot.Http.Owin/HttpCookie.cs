@@ -14,18 +14,12 @@ namespace Base2art.Soufflot.Http.Owin
 
         public string Name
         {
-            get
-            {
-                return this.name;
-            }
+            get { return this.name; }
         }
 
         public string Value
         {
-            get
-            {
-                return this.value;
-            }
+            get { return this.value; }
         }
     }
 }

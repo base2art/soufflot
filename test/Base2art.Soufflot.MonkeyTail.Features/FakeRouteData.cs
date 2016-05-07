@@ -27,26 +27,17 @@ namespace Base2art.Soufflot.Pack.Features
 
         public IClass<T> ControllerClass
         {
-            get
-            {
-                return this.klazz;
-            }
+            get { return this.klazz; }
         }
 
         public Type Type
         {
-            get
-            {
-                return this.ControllerClass.Type;
-            }
+            get { return this.ControllerClass.Type; }
         }
 
         public Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>> Expression
         {
-            get
-            {
-                return this.expr;
-            }
+            get { return this.expr; }
         }
     }
 }
