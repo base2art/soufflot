@@ -23,13 +23,13 @@ namespace Base2art.Soufflot.Api.Config
 
         private static void AddTo(Properties properties, string line)
         {
-            bool isValidLine = (!string.IsNullOrEmpty(line));
+            bool isValidLine = !string.IsNullOrEmpty(line);
             if (isValidLine)
             {
-                isValidLine &= (!line.StartsWith(";"));
-                isValidLine &= (!line.StartsWith("#"));
-                isValidLine &= (!line.StartsWith("'"));
-                isValidLine &= (line.Contains("="));
+                isValidLine &= !line.StartsWith(";");
+                isValidLine &= !line.StartsWith("#");
+                isValidLine &= !line.StartsWith("'");
+                isValidLine &= line.Contains("=");
             }
 
             if (isValidLine)
