@@ -1,13 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Base2art.Soufflot.Api.Fixtures
-{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
     using Base2art.Soufflot.Api;
     using Base2art.Soufflot.Http;
     using Base2art.Soufflot.Mvc;
+
+namespace Base2art.Soufflot.Api.Fixtures
+{
 
     public class ControllerThrowsException:IRenderingRouted
     {
