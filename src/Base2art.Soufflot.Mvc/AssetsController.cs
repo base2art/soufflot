@@ -46,7 +46,8 @@ namespace Base2art.Soufflot.Mvc
             var result = this.NormalizePath(relativeFileName);
             if (string.IsNullOrWhiteSpace(result))
             {
-                return httpContext.NotFound(new SimpleContent {
+                return httpContext.NotFound(new SimpleContent
+                {
                     BodyContent = "File Not Found",
                     ContentType = "text/plain"
                 });
@@ -55,13 +56,15 @@ namespace Base2art.Soufflot.Mvc
             string path = Path.Combine(diskFolder, result);
             if (!File.Exists(path))
             {
-                return httpContext.NotFound(new SimpleContent {
+                return httpContext.NotFound(new SimpleContent
+                {
                     BodyContent = string.Format("File '{0}' Not Found", result),
                     ContentType = "text/plain"
                 });
             }
             
-            return httpContext.Ok(new SimpleContent {
+            return httpContext.Ok(new SimpleContent
+            {
                 Body = File.ReadAllBytes(path),
                 ContentType = this.mapper.GetMimeMapping(path)
             });

@@ -13,7 +13,6 @@ namespace Base2art.Soufflot.CommandRunner.Tasks
         
         protected override void ExecuteInternal()
         {
-            
             var directory = this.Options.Directory;
             var nuGetPath = this.Options.NuGetPath;
             

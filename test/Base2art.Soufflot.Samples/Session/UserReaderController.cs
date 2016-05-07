@@ -12,8 +12,10 @@ namespace Base2art.Soufflot.Samples.Session
         {
             var user = httpContext.Request.User;
             var userName = user.UserName;
-            return new SimpleResult {
-                Content = new SimpleContent {
+            return new SimpleResult
+            {
+                Content = new SimpleContent
+                {
                     BodyContent = userName + "[" + string.Join(",", user.GroupNames) + "]" + user.IsAuthenticated
                 }
             };

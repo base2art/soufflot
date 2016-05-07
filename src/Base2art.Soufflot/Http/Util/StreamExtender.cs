@@ -39,7 +39,6 @@ namespace Base2art.Soufflot.Http.Util
 
         public static StringReadResult ReadFullyAsString(this Stream stream, int maxByteSize)
         {
-
             char[] buffer = new char[16 * 1024];
             var currentlyRead = 0;
             StringBuilder sb = new StringBuilder();

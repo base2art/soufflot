@@ -1,9 +1,7 @@
 namespace Base2art.Soufflot.Api
 {
-
     public class SimpleContent : IContent
     {
-        
         public byte[] Body { get; set; }
         
         public string BodyContent

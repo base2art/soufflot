@@ -1,6 +1,5 @@
 namespace Base2art.Soufflot.Api
 {
-
     public class SimpleResult : IResult
     {
         public IContent Content { get; set; }

@@ -22,7 +22,6 @@ namespace Base2art.Soufflot.CommandRunner
         {
             try
             {
-
                 AppDomain.Unload(this.childApp);
             }
             catch (Exception)

@@ -107,8 +107,10 @@ namespace Base2art.Soufflot.Api
 
         protected virtual IResult OnRouteNotFound(IHttpContext httpContext)
         {
-            return new SimpleResult {
-                Content = new SimpleContent {
+            return new SimpleResult
+            {
+                Content = new SimpleContent
+                {
                     BodyContent = "Page Not Found",
                     ContentType = "text/plain"
                 },

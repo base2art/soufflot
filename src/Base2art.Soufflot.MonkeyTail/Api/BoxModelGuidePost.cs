@@ -95,7 +95,8 @@ namespace Base2art.MonkeyTail.Api
         {
             get
             {
-                return new BoxModelGuidePost[] {
+                return new BoxModelGuidePost[]
+                {
                     CenterBacking, 
                     LeftBacking, 
                     LeftLeftBacking, 

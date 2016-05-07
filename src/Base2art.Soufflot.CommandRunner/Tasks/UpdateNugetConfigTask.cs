@@ -57,11 +57,13 @@ namespace Base2art.Soufflot.CommandRunner.Tasks
 
 /*
  
-function update-Nuget-config() {
+function update-Nuget-config()
+{
   
   $addEl = $packageSource.selectSingleNode("add[@key='Base2Art']")
   
-  if ($addEl -eq $null) {
+  if ($addEl -eq $null)
+  {
     $addEl = $configDoc.CreateElement("add")
     $addEl.SetAttribute("key", "Base2Art")
     $addEl.SetAttribute("value", $nugetRepoLocalDir)
@@ -70,7 +72,8 @@ function update-Nuget-config() {
 
   $addEl = $packageSource.selectSingleNode("add[@key='nuget.org']")
   
-  if ($addEl -eq $null) {
+  if ($addEl -eq $null)
+  {
     $addEl = $configDoc.CreateElement("add")
     $addEl.SetAttribute("key", "nuget.org")
     $addEl.SetAttribute("value", "https://www.nuget.org/api/v2/")
@@ -82,7 +85,8 @@ function update-Nuget-config() {
 }
 
   $nugetRepoLocalDir = "$Home\nugetserver\Packages"
-  if (-Not (Test-Path $nugetRepoLocalDir) ) {
+  if (-Not (Test-Path $nugetRepoLocalDir) )
+  {
     $nugetImportScript = "git clone git@bitbucket.org:base2art/base2art.localnugetserver.git nugetserver"
     return "You must run '$nugetImportScript' in '$Home'"
   }

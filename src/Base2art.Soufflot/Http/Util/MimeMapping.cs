@@ -9,7 +9,8 @@ namespace Base2art.Soufflot.Http.Util
         private readonly ILazy<bool> ensurer;
         public MimeMapping()
         {
-            this.ensurer = new RetryLazy<bool>(() =>{
+            this.ensurer = new RetryLazy<bool>(() =>
+            {
                                              this.Populate();
                                              return true;
                                          });

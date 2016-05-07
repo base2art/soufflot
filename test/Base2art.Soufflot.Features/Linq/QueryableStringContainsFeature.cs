@@ -13,7 +13,6 @@ namespace Base2art.PlayN.Features.Linq
     [TestFixture]
     public class QueryableStringContainsFeature
     {
-
         [Test]
         public void ShouldFilterByEnumNullChecks()
         {

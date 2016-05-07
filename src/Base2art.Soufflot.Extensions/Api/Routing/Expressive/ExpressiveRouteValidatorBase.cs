@@ -13,7 +13,6 @@ namespace Base2art.Soufflot.Api.Routing.Expressive
     public abstract class ExpressiveRouteValidatorBase<TController>
         where TController : IRenderingRouted
     {
-
         protected RouteExpressionTree VerifyNonFunctionalExpression(
             Expression func)
         {

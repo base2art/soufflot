@@ -9,7 +9,6 @@ namespace Base2art.Soufflot.Api.Fixtures
 
     public class ChildController : IRenderingRouted
     {
-
         public IPositionedRenderingRouted[] RenderingControllers
         {
             get { return new IPositionedRenderingRouted[0]; }

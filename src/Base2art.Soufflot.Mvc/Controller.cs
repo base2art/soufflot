@@ -27,7 +27,8 @@ namespace Base2art.Soufflot.Mvc
             int priority,
             IRenderingRouted renderingRouted)
         {
-            return new PositionedRenderingRouted {
+            return new PositionedRenderingRouted
+            {
                 RenderingRoutedItem = renderingRouted ?? new NullRenderingRouted(),
                 Container = containerId,
                 ContainerPriority = priority

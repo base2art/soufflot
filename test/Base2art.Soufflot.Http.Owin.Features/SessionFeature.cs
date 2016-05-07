@@ -11,7 +11,6 @@ namespace Base2art.Soufflot.Http.Owin
     [TestFixture]
     public class SessionFeature : AppBaseFeature
     {
-
         [Test]
         public void ShouldSaveAndLoadSession()
         {

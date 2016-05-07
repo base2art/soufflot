@@ -17,7 +17,6 @@ namespace Base2art.Soufflot.Routing.Functional
     [TestFixture]
     public class FunctionalRoutingFeature
     {
-
         [Test]
         public void ShouldExecuteControllerNotFoundByMatch()
         {
