@@ -40,7 +40,6 @@ namespace Base2art.Soufflot.Api.Diagnostics
 
         // 192 - 255 Custom
         // 0xC0 - 0xFF Custom
-
         public static readonly LogLevel Off = new LogLevel(PredefinedLogLevel.Off);
     }
 }
