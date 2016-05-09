@@ -11,7 +11,7 @@ namespace Base2art.Soufflot.Api.Fixtures
 
     public class ParentController : IRenderingRouted
     {
-        public IPositionedRenderingRouted[] RenderingControllers
+        public IPositionedRenderingRouted[] RenderingRoutedItems
         {
             get
             {
@@ -21,13 +21,13 @@ namespace Base2art.Soufflot.Api.Fixtures
                            {
                                Container = 0, 
                                ContainerPriority = 0,
-                               RenderingController = new ChildController()
+                               RenderingRoutedItem = new ChildController()
                            }
                        };
             }
         }
 
-        public INonRenderingRouted[] NonRenderingControllers
+        public INonRenderingRouted[] NonRenderingRoutedItems
         {
             get { return new INonRenderingRouted[0]; }
         }

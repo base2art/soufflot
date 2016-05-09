@@ -108,7 +108,7 @@ namespace Base2art.Soufflot.CommandRunner.Tasks
             var dlls = new Type[]
             {
                 typeof(Base2art.Soufflot.IRoute), // "Base2art.Soufflot",
-                typeof(Base2art.Soufflot.StringExtender), // "Base2art.Soufflot.Extensions",
+                typeof(Base2art.Soufflot.Mvc.Routed), // "Base2art.Soufflot.MVC",
                 typeof(Base2art.Soufflot.Http.Owin.HttpContext), // "Base2art.Soufflot.Http.Owin",
                 typeof(MonketTailContentMapper), // "Base2art.Soufflot.MonkeyTail",
             };

@@ -105,7 +105,12 @@
     <Compile Include="Http\Util\StreamStringReaderFeature.cs" />
     <Compile Include="Linq\ArrayExtensionFeature.cs" />
     <Compile Include="Mvc\ContentResultsFeature.cs" />
+    <Compile Include="Mvc\NullNonRenderingRouted.cs" />
+    <Compile Include="Mvc\NullRenderingRouted.cs" />
+    <Compile Include="Mvc\Routed.cs" />
     <Compile Include="Mvc\SimpleControllerFeature.cs" />
+    <Compile Include="Mvc\SimpleNonRenderingRouted.cs" />
+    <Compile Include="Mvc\SimpleRenderingRouted.cs" />
     <Compile Include="Mvc\TestHttpContext.cs" />
     <Compile Include="Mvc\TestHttpResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

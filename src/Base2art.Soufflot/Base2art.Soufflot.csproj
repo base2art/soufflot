@@ -57,6 +57,7 @@
     <Compile Include="Api\Config\AppDomainDataConfigurationProvider.cs" />
     <Compile Include="Api\Config\CommonSettings.cs" />
     <Compile Include="Api\Config\Properties.cs" />
+    <Compile Include="Api\ContentResults.cs" />
     <Compile Include="Api\ControllerExecutionManager.cs" />
     <Compile Include="Api\Diagnostics\IRequestLoggerFactory.cs" />
     <Compile Include="Api\Diagnostics\TextWriterLogger.cs" />

@@ -1,20 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
-    <ProjectGuid>{38D04705-A5E4-4E3F-94CA-66801BD38F08}</ProjectGuid>
+    <ProjectGuid>{687A3BA2-0FAA-4C7D-9279-70193526F212}</ProjectGuid>
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
-    <RootNamespace>Base2art.Soufflot.Mvc</RootNamespace>
-    <AssemblyName>Base2art.Soufflot.Mvc</AssemblyName>
+    <RootNamespace>Base2art.Soufflot.RouteCompiler</RootNamespace>
+    <AssemblyName>Base2art.Soufflot.RouteCompiler</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <NoWin32Manifest>False</NoWin32Manifest>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\..\packages\Base2art.Keys.1.0.0\content\base2art.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>False</DelaySign>
-    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,23 +44,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssetsController.cs" />
-    <Compile Include="Routed.cs" />
-    <Compile Include="NullNonRenderingRouted.cs" />
-    <Compile Include="NullRenderingRouted.cs" />
+    <Compile Include="CompilerResult.cs" />
+    <Compile Include="RouteCompiler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Routing\MvcRouter.cs" />
-    <Compile Include="SimpleNonRenderingRouted.cs" />
-    <Compile Include="SimpleRenderingRouted.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Base2art.Soufflot\Base2art.Soufflot.csproj">
-      <Project>{D9179312-4A21-45FD-9619-BE212F983E6A}</Project>
-      <Name>Base2art.Soufflot</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Routing" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -56,5 +56,4 @@ namespace Base2art.MonkeyTail.Api
 
         public int ContainerPriority { get; set; }
     }
-        
 }

@@ -7,7 +7,7 @@ namespace Base2art.Soufflot.Pack.Features.Fixtures
     using Base2art.Soufflot.Http;
     using Base2art.Soufflot.Mvc;
 
-    public class MappedController : SimpleRenderingController
+    public class MappedController : SimpleRenderingRouted
     {
         protected override IResult ExecuteMain(IHttpContext httpContext, List<PositionedResult> childResults)
         {

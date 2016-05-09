@@ -36,7 +36,7 @@ namespace Base2art.Soufflot.Mvc
         [Test]
         public void ShouldLoadNullRenderingController()
         {
-            IRenderingRouted controller = new NullRenderingController();
+            IRenderingRouted controller = new NullRenderingRouted();
             controller.Execute(new TestHttpContext(), new List<PositionedResult>()).Should().NotBeNull();
             controller.NonRenderingRoutedItems.Should().BeEmpty();
             controller.RenderingRoutedItems.Should().BeEmpty();
@@ -45,7 +45,7 @@ namespace Base2art.Soufflot.Mvc
         [Test]
         public void ShouldLoadNullNonRenderingController()
         {
-            INonRenderingRouted controller = new NullNonRenderingController();
+            INonRenderingRouted controller = new NullNonRenderingRouted();
             controller.Execute(new TestHttpContext());
             controller.NonRenderingRoutedItems.Should().BeEmpty();
         }
@@ -83,7 +83,7 @@ namespace Base2art.Soufflot.Mvc
                 .Content.BodyAsString.Should().BeEmpty();
         }
 
-        private class TestRenderingController : SimpleRenderingController
+        private class TestRenderingController : SimpleRenderingRouted
         {
             protected override IResult ExecuteMain(IHttpContext httpContext, List<PositionedResult> childResults)
             {
@@ -91,52 +91,52 @@ namespace Base2art.Soufflot.Mvc
             }
         }
 
-        private class TestNonRenderingController : SimpleNonRenderingController
+        private class TestNonRenderingController : SimpleNonRenderingRouted
         {
             protected override void ExecuteMain(IHttpContext httpContext)
             {
             }
         }
 
-        private class TestChildRenderingController : SimpleRenderingController
+        private class TestChildRenderingController : SimpleRenderingRouted
         {
             protected override IResult ExecuteMain(IHttpContext httpContext, List<PositionedResult> childResults)
             {
                 return httpContext.Ok();
             }
             
-            protected override IEnumerable<INonRenderingRouted> NonRenderingControllers
+            protected override IEnumerable<INonRenderingRouted> NonRenderingRoutedItems
             {
                 get
                 {
-                    yield return this.CreateNonRenderingController(x => x.Logger.Log("Test", LogLevels.DeveloperTrace));
-                    yield return this.CreateNonRenderingController(null);
+                    yield return this.CreateNonRenderingRouted(x => x.Logger.Log("Test", LogLevels.DeveloperTrace));
+                    yield return this.CreateNonRenderingRouted(null);
                 }
             }
             
-            protected override IEnumerable<IPositionedRenderingRouted> RenderingControllers
+            protected override IEnumerable<IPositionedRenderingRouted> RenderingRoutedItems
             {
                 get
                 {
-                    yield return this.CreateRenderingController(0, 0, (x, y) => x.Ok(new SimpleContent{ BodyContent = "Here You Go" }));
-                    yield return this.CreateRenderingController(0, 0, (IRenderingRouted)null);
-                    yield return this.CreateRenderingController(0, 0, (Func<IHttpContext, List<PositionedResult>, IResult>)null);
+                    yield return this.CreateRenderingRouted(0, 0, (x, y) => x.Ok(new SimpleContent{ BodyContent = "Here You Go" }));
+                    yield return this.CreateRenderingRouted(0, 0, (IRenderingRouted)null);
+                    yield return this.CreateRenderingRouted(0, 0, (Func<IHttpContext, List<PositionedResult>, IResult>)null);
                 }
             }
         }
 
-        private class TestChildNonRenderingController : SimpleNonRenderingController
+        private class TestChildNonRenderingController : SimpleNonRenderingRouted
         {
             protected override void ExecuteMain(IHttpContext httpContext)
             {
             }
             
-            protected override IEnumerable<INonRenderingRouted> NonRenderingControllers
+            protected override IEnumerable<INonRenderingRouted> NonRenderingRoutedItems
             {
                 get
                 {
-                    yield return this.CreateNonRenderingController(x => Debug.WriteLine(x));
-                    yield return this.CreateNonRenderingController(null);
+                    yield return this.CreateNonRenderingRouted(x => Debug.WriteLine(x));
+                    yield return this.CreateNonRenderingRouted(null);
                 }
             }
         }

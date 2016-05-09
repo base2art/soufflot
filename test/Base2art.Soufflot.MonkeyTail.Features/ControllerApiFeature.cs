@@ -7,27 +7,27 @@ namespace Base2art.Soufflot.Pack.Features
     using Base2art.Soufflot.Http;
     using Base2art.Soufflot.Mvc;
     
-    public class ControllerApiFeature : SimpleRenderingController
+    public class ControllerApiFeature : SimpleRenderingRouted
     {
         protected override IResult ExecuteMain(IHttpContext httpContext, List<PositionedResult> childResults)
         {
             return httpContext.NoContent();
         }
         
-        protected override IEnumerable<IPositionedRenderingRouted> RenderingControllers
+        protected override IEnumerable<IPositionedRenderingRouted> RenderingRoutedItems
         {
             get
             {
-                yield return this.CreateRenderingController(BoxModelGuidePost.BottomBottom, 1, new NullRenderingController());
-                yield return this.CreateRenderingController(BoxModelGuidePost.BottomBottom, 1, (x, y) => x.Ok(new SimpleContent{ BodyContent = "String" }));
+                yield return this.CreateRenderingRouted(BoxModelGuidePost.BottomBottom, 1, new NullRenderingRouted());
+                yield return this.CreateRenderingRouted(BoxModelGuidePost.BottomBottom, 1, (x, y) => x.Ok(new SimpleContent{ BodyContent = "String" }));
             }
         }
         
-        protected override IEnumerable<INonRenderingRouted> NonRenderingControllers
+        protected override IEnumerable<INonRenderingRouted> NonRenderingRoutedItems
         {
             get
             {
-                yield return this.CreateNonRenderingController(x => Debug.WriteLine(x.ToString()));
+                yield return this.CreateNonRenderingRouted(x => Debug.WriteLine(x.ToString()));
             }
         }
     }

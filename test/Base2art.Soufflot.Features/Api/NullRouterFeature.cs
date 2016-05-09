@@ -13,8 +13,8 @@ namespace Base2art.Soufflot.Api
         public void ShouldLoadWebConfig()
         {
             var provider = new NullRouter();
-            provider.FindNonRenderingControllerTypes(null).Should().BeNull();
-            provider.FindRenderingControllerType(null).Should().BeNull();
+            provider.FindNonRenderingRoutedTypes(null).Should().BeNull();
+            provider.FindRenderingRoutedType(null).Should().BeNull();
         }
     }
 }

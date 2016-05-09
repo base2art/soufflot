@@ -86,12 +86,12 @@ namespace Base2art.Soufflot.Api
 
         private class CustomRouter : IRouter
         {
-            public IRouteData<IRenderingRouted> FindRenderingControllerType(IHttpRequest request)
+            public IRouteData<IRenderingRouted> FindRenderingRoutedType(IHttpRequest request)
             {
                 throw new NotImplementedException();
             }
 
-            public IEnumerable<IRouteData<INonRenderingRouted>> FindNonRenderingControllerTypes(IHttpRequest request)
+            public IEnumerable<IRouteData<INonRenderingRouted>> FindNonRenderingRoutedTypes(IHttpRequest request)
             {
                 throw new NotImplementedException();
             }

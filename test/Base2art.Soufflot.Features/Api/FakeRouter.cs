@@ -40,7 +40,7 @@ namespace Base2art.Soufflot.Api
                 this.otherKlazzez = otherKlazzez;
             }
 
-            public IRouteData<IRenderingRouted> FindRenderingControllerType(IHttpRequest request)
+            public IRouteData<IRenderingRouted> FindRenderingRoutedType(IHttpRequest request)
             {
                 if (this.routeData != null)
                 {
@@ -60,7 +60,7 @@ namespace Base2art.Soufflot.Api
                 return new FakeRouteData<IRenderingRouted>(this.klazz);
             }
 
-            public IEnumerable<IRouteData<INonRenderingRouted>> FindNonRenderingControllerTypes(IHttpRequest request)
+            public IEnumerable<IRouteData<INonRenderingRouted>> FindNonRenderingRoutedTypes(IHttpRequest request)
             {
                 return this.otherKlazzez.Select(x => new FakeRouteData<INonRenderingRouted>(x));
             }

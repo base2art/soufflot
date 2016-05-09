@@ -7,7 +7,6 @@ namespace Base2art.Soufflot.Api
     using Base2art.Soufflot.Api.Diagnostics;
     using Base2art.Soufflot.Http.Owin;
     using Microsoft.Owin;
-    using Base2art.Soufflot.Mvc;
 
     using FluentAssertions;
 

@@ -16,3 +16,5 @@ ProfilingSessions
 
 scrap
 src/Base2art.Soufflot/StyleCopViolations.xml
+src/Base2art.Soufflot.Http.Owin/StyleCopViolations.xml
+src/Base2art.Soufflot.MonkeyTail/StyleCopViolations.xml

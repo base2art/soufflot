@@ -25,14 +25,14 @@ namespace Base2art.Soufflot.Api
             this.expr = expr;
         }
 
-        public IClass<T> ControllerClass
+        public IClass<T> RoutedClass
         {
             get { return this.klazz; }
         }
 
         public Type Type
         {
-            get { return this.ControllerClass.Type; }
+            get { return this.RoutedClass.Type; }
         }
 
         public Expression<Func<IRenderingRouted, IHttpContext, List<PositionedResult>, IResult>> Expression

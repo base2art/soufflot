@@ -4,7 +4,7 @@ namespace Base2art.Soufflot.Api.Fixtures
 
     public class PositionedRenderingController : IPositionedRenderingRouted
     {
-        public IRenderingRouted RenderingController { get; set; }
+        public IRenderingRouted RenderingRoutedItem { get; set; }
 
         public int Container { get; set; }
 

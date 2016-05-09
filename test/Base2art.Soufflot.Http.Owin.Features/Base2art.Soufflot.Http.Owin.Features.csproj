@@ -58,25 +58,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppBaseFeature.cs" />
     <Compile Include="AppBuilderExtenderFeature.cs" />
     <Compile Include="Fixtures\DomainWrapper.cs" />
-    <Compile Include="FlashFeature.cs" />
     <Compile Include="Fixtures\IDomainWrapper.cs" />
-    <Compile Include="LoggingApplicationModeFeature.cs" />
     <Compile Include="OwinExtender.cs" />
-    <Compile Include="RedirectFeature.cs" />
-    <Compile Include="SessionFeature.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Base2art.Soufflot.Extensions\Base2art.Soufflot.Extensions.csproj">
-      <Project>{88F7E79A-9E93-459C-8595-AFA703B4EA8B}</Project>
-      <Name>Base2art.Soufflot.Extensions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\Base2art.Soufflot.Http.Owin\Base2art.Soufflot.Http.Owin.csproj">
       <Project>{16FE843A-D9F6-4554-B37C-6D255E61D305}</Project>
       <Name>Base2art.Soufflot.Http.Owin</Name>

@@ -9,12 +9,12 @@ namespace Base2art.Soufflot.Api.Fixtures
 
     public class CustomControllerWithNonRenderingChild : ICustomController
     {
-        public IPositionedRenderingRouted[] RenderingControllers
+        public IPositionedRenderingRouted[] RenderingRoutedItems
         {
             get { return new IPositionedRenderingRouted[0]; }
         }
 
-        public INonRenderingRouted[] NonRenderingControllers
+        public INonRenderingRouted[] NonRenderingRoutedItems
         {
             get { return new INonRenderingRouted[] { new CountingNonRenderingController() }; }
         }

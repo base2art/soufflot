@@ -3,8 +3,6 @@ namespace Base2art.Soufflot.Http.Owin
     using System;
 
     using Base2art.Soufflot.Api;
-    using Base2art.Soufflot.Api.Routing.Functional;
-    using Base2art.Soufflot.Samples.Session;
 
     using NUnit.Framework;
 

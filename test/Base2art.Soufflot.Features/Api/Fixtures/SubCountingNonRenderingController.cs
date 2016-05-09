@@ -8,7 +8,7 @@ namespace Base2art.Soufflot.Api.Fixtures
     {
         public static int Count = 0;
 
-        public INonRenderingRouted[] NonRenderingControllers
+        public INonRenderingRouted[] NonRenderingRoutedItems
         {
             get { return new INonRenderingRouted[0]; }
         }
